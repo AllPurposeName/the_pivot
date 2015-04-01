@@ -16,6 +16,13 @@ Rails.application.routes.draw do
   put '/cart_items', to: "cart_items#decrement", as: "decrement_cart_items"
   delete '/cart_items', to: "cart_items#delete"
 
+  namespace :sellers, as: :seller, path: "/:slug" do
+    resources :breeds
+    resources :cats
+    resources :orders
+    get '/dashboard', to: "dashboard#show"
+  end
+
   namespace :admin do
     resources :inventory, only: [:index]
     resources :breeds, except: [:index]
