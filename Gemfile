@@ -42,6 +42,8 @@ gem 'faker'
 gem 'rails_12factor', group: :production
 
 group :development, :test do
+  gem 'irbtools'
+  gem 'awesome_print'
   gem 'capybara'
   gem 'launchy'
   gem 'pry'
