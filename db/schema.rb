@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150319173348) do
+ActiveRecord::Schema.define(version: 20150331205424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,12 @@ ActiveRecord::Schema.define(version: 20150319173348) do
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
+  create_table "sellers", force: :cascade do |t|
+    t.string   "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.text     "username"
     t.string   "password_digest"
@@ -67,6 +73,8 @@ ActiveRecord::Schema.define(version: 20150319173348) do
     t.string   "email"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "userable_id"
+    t.string   "userable_type"
   end
 
   add_foreign_key "orders", "users"

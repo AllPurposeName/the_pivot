@@ -23,4 +23,12 @@ Rails.application.routes.draw do
     put '/cats/js/:id', to: 'cats#retired_update'
     resources :orders, only: [:index, :update]
   end
+
+  namespace :sellers, as: :seller, path: "/:slug" do
+    resources :breeds
+    resources :cats
+    resources :orders
+    get '/dashboard', to: "dashboard#show"
+  end
+
 end
