@@ -27,7 +27,6 @@ RSpec.describe Cat, type: :model do
       end
     end
 
-
     context "have a description" do
       it "exists" do
         expect(build(:cat, description: "super awesome cat")).to be_valid
@@ -37,7 +36,6 @@ RSpec.describe Cat, type: :model do
         expect(build(:cat, description: "")).to_not be_valid
       end
     end
-
 
     context "have a valid price" do
       it "exists" do
@@ -49,23 +47,11 @@ RSpec.describe Cat, type: :model do
       end
     end
 
-
     context "have an image path" do
       it "exists" do
         expect(build(:cat, image_path: "sabertooth_01.jpeg")).to be_valid
       end
-
-      # it "is default if " do
-      #   cat = Cat.create(name: "cat")
-      #   expect(cat.image_path).to eq("cat.jpg")
-      # end
-
-      it "is default if " do
-        cat = Cat.create(name: "cat")
-        expect(cat.image_path).to eq("cat.jpg")
-      end
     end
-
 
     context "belongs to a breed" do
       it "exists" do
@@ -78,7 +64,5 @@ RSpec.describe Cat, type: :model do
         expect(feline.breeds.first.name).to eq("sabertooth")
       end
     end
-
-
   end
 end
