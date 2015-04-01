@@ -32,6 +32,7 @@ gem 'bootstrap-sass', '~> 3.3.2'
 gem 'autoprefixer-rails'
 
 gem 'cancancan'
+gem 'faker'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -41,7 +42,6 @@ gem 'cancancan'
 gem 'rails_12factor', group: :production
 
 group :development, :test do
-  gem 'faker'
   gem 'capybara'
   gem 'launchy'
   gem 'pry'

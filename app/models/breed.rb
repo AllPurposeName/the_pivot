@@ -27,3 +27,5 @@ class Breed < ActiveRecord::Base
     "#{(name.parameterize.underscore)}"
   end
 end
+
+Category = Breed
