@@ -10,3 +10,5 @@ class CatBreed < ActiveRecord::Base
     end
   end
 end
+
+ItemCategory = CatBreed
