@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :seller do
-    sequence(:slug) {|n| "slug_#{n}"}
+    sequence(:store_name) {|n| "Store #{n}"}
   end
-
 end

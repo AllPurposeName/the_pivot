@@ -6,6 +6,7 @@ class Seed
     generate_users
     generate_orders
     generate_default_user
+    generate_sellers
   end
 
   def self.call
@@ -62,13 +63,13 @@ class Seed
     end
   end
 
-  #def generate_sellers
-    #10.times do
-      #create(:seller)
-      #user = create(:user, username: Faker::Name.name, email: Faker::Internet.email)
-      #puts "Created User: #{user.name}"
-    #end
-  #end
+  def generate_sellers
+    10.times do
+      seller = FactoryGirl.create(:seller)
+      user = FactoryGirl.create(:user, username: Faker::Name.name, email: Faker::Internet.email, userable_id: seller.id, userable_type: "Seller")
+      puts "Created Seller: #{seller.store_name}"
+    end
+  end
 
   def image
     Dir["app/assets/images/individuals/*.jpg"].sample.split("/").last
