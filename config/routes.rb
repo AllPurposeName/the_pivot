@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   root to: "home#index"
+  get '/items', to: "home#items"
+  get '/sellers', to: "home#sellers"
 
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
   get "/logout", to: "sessions#logout"
-  get '/items', to: "home#items"
 
   resources :breeds, only: [:index]
   get '/breeds/:name', to: "breeds#show", as: "breed"
