@@ -2,11 +2,11 @@ class Seed
   def call
     generate_admin_user
     generate_categories
+    generate_sellers
     generate_items
     generate_users
     generate_orders
     generate_default_user
-    generate_sellers
   end
 
   def self.call
@@ -56,9 +56,10 @@ class Seed
   end
 
   def generate_items
+    seller_count = Seller.count
     100.times do
       category = Breed.order("RANDOM()").limit(1).first
-      item = category.cats.create(name: Faker::Commerce.product_name, price: Faker::Commerce.price.to_i, image_path: image, description: "x")
+      item = category.cats.create(name: Faker::Commerce.product_name, price: Faker::Commerce.price.to_i, image_path: image, description: "x", seller_id: rand(1..seller_count))
       puts "Created Item: #{item.name}"
     end
   end
