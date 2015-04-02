@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
   get "/logout", to: "sessions#logout"
+  get '/items', to: "home#items"
 
   resources :breeds, only: [:index]
   get '/breeds/:name', to: "breeds#show", as: "breed"
-  resources :cats, only: [:index, :show]
   resources :order_cats, only: [:create]
   resources :orders, only: [:index, :show]
   resources :cart_items, only: [:create, :show]
