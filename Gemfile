@@ -34,6 +34,7 @@ gem 'autoprefixer-rails'
 gem 'cancancan'
 gem 'faker'
 gem 'masonry-rails'
+gem 'factory_girl_rails', "~> 4.0"
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -49,7 +50,6 @@ group :development, :test do
   gem 'launchy'
   gem 'pry'
   gem 'byebug'
-  gem 'factory_girl_rails', "~> 4.0"
   gem 'database_cleaner'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
