@@ -1,0 +1,33 @@
+<div id="seller-profile" class="pull-left inline">
+  <%= image_tag "croctee.jpg", width: "250" %>
+  <figcaption class="caption">
+    <h3>
+      <%= @cats.first.seller.store_name %>
+    </h3>
+    <p>I love crocodiles. A little too much.</p>
+  </figcaption>
+</div>
+<div id="masonry-container">
+  <div id="store-nav">
+    <h3 class="inline">Garment Type</h3>
+    &nbsp;
+    &nbsp;
+    <h3 class="inline">Price</h3>
+    &nbsp;
+    &nbsp;
+    <h3 class="inline">Material Type</h3>
+    &nbsp;
+    &nbsp;
+    <div id="seller-banner" class="inline">
+      <%= image_tag "horizontalcroc.png", width: "350" %>
+    </div>
+  </div>
+  <% @cats.each do |cat| %>
+    <div class="item">
+      <%= link_to image_tag(cat.image_path), seller_cat_path(id: cat.id) %>
+      <figcaption>
+        <%= link_to cat.name, seller_cat_path(id: cat.id) %>
+      </figcaption>
+    </div>
+  <% end %>
+</div>
