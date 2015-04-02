@@ -77,7 +77,7 @@ a:hover {
 }
 
 .item img {
-	width: 200px;
+	width: 300px;
 	height: auto;
 }
 
@@ -107,9 +107,9 @@ a:hover {
 }
 
 #seller-profile {
-	display: inline;
-  margin-top: 90px;
-  margin-right: 60px;
+	/*display: inline;*/
+  /*position: relative;*/
+  margin-top: 120px;
   border: 2px solid black;
 }
 
@@ -118,6 +118,12 @@ a:hover {
 
 .caption{
   margin-left: 10px;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #image-center {

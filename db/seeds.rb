@@ -1,4 +1,5 @@
 class Seed
+  include FactoryGirl
   def call
     generate_admin_user
     generate_categories

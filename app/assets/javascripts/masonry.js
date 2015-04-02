@@ -3,7 +3,7 @@ $(document).ready(function() {
 	// Initialize Masonry
     console.log("hi");
 	$('.masonry-container').masonry({
-		columnWidth: 320,
+		columnWidth: 300,
 		itemSelector: '.item',
 		isFitWidth: true,
 	}).imagesLoaded(function() {
