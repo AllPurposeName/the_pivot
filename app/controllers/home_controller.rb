@@ -12,7 +12,7 @@ class HomeController < ApplicationController
     set_random_cats
   end
 
-  def sellers
+  def stores
     set_random_sellers
   end
 

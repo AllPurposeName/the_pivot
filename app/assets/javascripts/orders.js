@@ -29,9 +29,6 @@ $(document).ready(function () {
     };
   })(jQuery);
 
-
-
-
   var $orders = $('.orders');
 
   $('#order_filter_status').on('change', function () {
@@ -51,12 +48,12 @@ $(document).ready(function () {
     var orderID = $this.data("order");
     var newStatus = $this.find("#order_" + orderID + "_change_status option:selected").text();
     $.ajax({
-      method: "PUT", 
+      method: "PUT",
       data: {
         status: newStatus
       },
       url: '/admin/orders/' + orderID
-    }) 
+    })
     .always(function(response) {
       $this.data("status", newStatus).attr('data-status', newStatus);
       $('#status-area').flash_message({
@@ -65,8 +62,5 @@ $(document).ready(function () {
       });
 
     });
-
-
-
   })
 });

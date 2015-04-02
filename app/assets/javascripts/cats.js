@@ -35,12 +35,12 @@ $(document).ready(function () {
     var catID = $("[data-cat]").data("cat");
     var newStatus = $this.find("#cat_change_retire option:selected").text();
     $.ajax({
-      method: "PUT", 
+      method: "PUT",
       data: {
         retired: "change"
       },
       url: '/admin/cats/js/'+catID
-    }) 
+    })
     .always(function() {
       $('#status-area').flash_message({
         text: 'Updated',

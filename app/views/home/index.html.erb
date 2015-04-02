@@ -1,17 +1,21 @@
 <%= image_tag("handmeups.png", class: "img-responsive center-block" ) %>
 
 <div id="logo-home">
-  <h1>Clothes from us to each other.<br> Hand Me Ups® delivers <br>handmade all natural <br>custom clothing.</h1>
+  <h1>Custom handmade clothing,
+    <br>from our sellers to you.
+    <br>Wear exactly what you want,
+    <br>not what your mother gave you.
+  </h1>
 </div>
 
 <h2 class="text-center">CATEGORIES</h2>
 <div class="text-center">
   <% @breeds.each do |breed| %>
-      <%= link_to "#{breed.name}", "breeds/#{breed.name.downcase}"%> |
+    <%= link_to "#{breed.name}", "breeds/#{breed.name.downcase}"%> |
   <% end %>
 </div>
 <h2 class="text-center">TOP 3 STORES</h2>
-<div class="masonry-container image-center" id="seller-container">
+<div class="masonry-container center-block" id="seller-container">
   <br>
   <br>
   <br>
@@ -22,17 +26,17 @@
     </div>
   <% end %>
 </div>
-  <br>
+<br>
 
-<div class="masonry-container image-center" id="garment-container">
 <h2 class="text-center">TOP 20 GARMENTS</h2>
+<div class="masonry-container center-block" id="garment-container">
   <% @cats.each do |cat| %>
     <div class="item">
       <%= link_to image_tag(cat.image_path), "cats/#{cat.id}" %>
     </div>
-  <br>
-  <br>
-  <br>
+    <br>
+    <br>
+    <br>
   <% end %>
 </div>
 
