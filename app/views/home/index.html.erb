@@ -1,23 +1,39 @@
-<%= image_tag("logo.png", class: "img-responsive center-block" ) %>
+<%= image_tag("handmeups.png", class: "img-responsive center-block" ) %>
 
 <div id="logo-home">
-  <h1>CATATOUILLE</h1>
+  <h1>Clothes from us to each other.<br> Hand Me Ups® delivers <br>handmade all natural <br>custom clothing.</h1>
 </div>
 
-<h1>NEED A BREED?</h1>
-
-<div class="list">
+<h2 class="text-center">CATEGORIES</h2>
+<div class="text-center">
   <% @breeds.each do |breed| %>
-    <%= link_to "#{breed.name}", "breeds/#{breed.name.downcase}"%>
-    </br>
+      <%= link_to "#{breed.name}", "breeds/#{breed.name.downcase}"%> |
   <% end %>
 </div>
 
-<h1>READY RIGHT MEOW</h1>
+<div class="masonry-container image-center" id="seller-container">
+<h2 class="text-center">TOP 3 STORES</h2>
+  <% @sellers.each do |seller| %>
+    <div class="item">
+      <%= link_to image_tag("croctee.jpg"), seller_path(slug: seller.slug) %>
+    </div>
+  <% end %>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+  <br>
 
-<div class="list">
+<div class="masonry-container image-center" id="garment-container">
+<h2 class="text-center">TOP 20 GARMENTS</h2>
   <% @cats.each do |cat| %>
-    <%= link_to "#{cat.name}", "cats/#{cat.id}" %>
-    </br>
+    <div class="item">
+      <%= link_to image_tag(cat.image_path), "cats/#{cat.id}" %>
+    </div>
+  <br>
+  <br>
+  <br>
   <% end %>
 </div>
+

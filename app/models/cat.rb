@@ -30,6 +30,10 @@ class Cat < ActiveRecord::Base
     self.retired = !self.retired
   end
 
+  def self.top_20
+    self.order("RANDOM()").limit(20)
+  end
+
   def slug
     self.seller.slug
   end

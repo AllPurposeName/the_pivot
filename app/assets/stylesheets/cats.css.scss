@@ -93,7 +93,7 @@ a:hover {
 	transition: left .4s ease-in-out, top .4s ease-in-out .4s;
 }
 
-#masonry-container {
+.masonry-container {
 	display: inline;
 }
 
@@ -120,4 +120,6 @@ a:hover {
   margin-left: 10px;
 }
 
-
+#image-center {
+  margin-left: 50px;
+}
