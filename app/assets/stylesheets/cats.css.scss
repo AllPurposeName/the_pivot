@@ -75,3 +75,18 @@ a:hover {
   height: auto;
   display: block;
 }
+
+#jumbotron {
+  position: relative;
+}
+
+
+#jumbotron img {
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+}
+
+#jumbotron h1 {
+  position: absolute;
+}
