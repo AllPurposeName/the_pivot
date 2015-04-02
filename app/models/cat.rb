@@ -29,4 +29,8 @@ class Cat < ActiveRecord::Base
   def change_retired
     self.retired = !self.retired
   end
+
+  def slug
+    self.seller.slug
+  end
 end
