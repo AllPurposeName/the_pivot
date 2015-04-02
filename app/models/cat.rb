@@ -30,5 +30,3 @@ class Cat < ActiveRecord::Base
     self.retired = !self.retired
   end
 end
-
-Item = Cat
