@@ -33,6 +33,7 @@ gem 'autoprefixer-rails'
 
 gem 'cancancan'
 gem 'faker'
+gem 'masonry-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

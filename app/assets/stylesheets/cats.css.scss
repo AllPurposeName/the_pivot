@@ -75,3 +75,49 @@ a:hover {
   height: auto;
   display: block;
 }
+
+.item img {
+	width: 200px;
+	height: auto;
+}
+
+.item {
+	display: block;
+	float: left;
+	width: 300px;
+  margin-top: 10px;
+	-webkit-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+	-moz-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+	-ms-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+	-o-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+	transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+}
+
+#masonry-container {
+	display: inline;
+}
+
+#store-nav {
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+.inline {
+	display: inline;
+}
+
+#seller-profile {
+	display: inline;
+  margin-top: 90px;
+  margin-right: 60px;
+  border: 2px solid black;
+}
+
+#seller-banner {
+}
+
+.caption{
+  margin-left: 10px;
+}
+
+
