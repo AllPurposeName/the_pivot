@@ -10,18 +10,17 @@
       <%= link_to "#{breed.name}", "breeds/#{breed.name.downcase}"%> |
   <% end %>
 </div>
-
-<div class="masonry-container image-center" id="seller-container">
 <h2 class="text-center">TOP 3 STORES</h2>
+<div class="masonry-container image-center" id="seller-container">
+  <br>
+  <br>
+  <br>
+  <br>
   <% @sellers.each do |seller| %>
     <div class="item">
       <%= link_to image_tag("croctee.jpg"), seller_path(slug: seller.slug) %>
     </div>
   <% end %>
-  <br>
-  <br>
-  <br>
-  <br>
 </div>
   <br>
 
