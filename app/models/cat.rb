@@ -7,6 +7,7 @@ class Cat < ActiveRecord::Base
   has_many :order_cats, inverse_of: :cat
   has_many :orders, through: :order_cats, inverse_of: :cats
   has_many :users, through: :orders, inverse_of: :cats
+  belongs_to :seller
 
   validates :name, length: { minimum: 2, maximum: 32 }
   validates_uniqueness_of :name
@@ -29,5 +30,3 @@ class Cat < ActiveRecord::Base
     self.retired = !self.retired
   end
 end
-
-Item = Cat

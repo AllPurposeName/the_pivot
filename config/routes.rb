@@ -25,8 +25,9 @@ Rails.application.routes.draw do
   end
 
   namespace :sellers, as: :seller, path: "/:slug" do
-    resources :breeds
+    get '/', to: "cats#index"
     resources :cats
+    resources :breeds
     resources :orders
     get '/dashboard', to: "dashboard#show"
   end

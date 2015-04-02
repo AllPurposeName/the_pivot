@@ -141,6 +141,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    masonry-rails (0.2.4)
+      railties
     method_locator (0.0.4)
     method_source (0.8.2)
     methodfinder (2.0.0)
@@ -278,6 +280,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
+  masonry-rails
   pg
   pry
   rails (= 4.2.0)
