@@ -33,4 +33,8 @@ class Cat < ActiveRecord::Base
   def self.top_20
     self.order("RANDOM()").limit(20)
   end
+
+  def slug
+    self.seller.slug
+  end
 end

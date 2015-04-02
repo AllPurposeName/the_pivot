@@ -1,7 +1,19 @@
 class HomeController < ApplicationController
-  before_action :set_top_cats, :set_breeds, :set_top_sellers
   def show
+  end
 
+  def index
+    set_top_sellers
+    set_breeds
+    set_top_cats
+  end
+
+  def items
+    set_random_cats
+  end
+
+  def sellers
+    set_random_sellers
   end
 
   private
@@ -16,5 +28,13 @@ class HomeController < ApplicationController
 
   def set_top_sellers
    @sellers = Seller.top_3
+  end
+
+  def set_random_cats
+    @cats = Cat.order("RANDOM()")
+  end
+
+  def set_random_sellers
+    @sellers = Seller.order("RANDOM()")
   end
 end
