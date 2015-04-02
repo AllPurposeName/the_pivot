@@ -29,4 +29,8 @@ class Cat < ActiveRecord::Base
   def change_retired
     self.retired = !self.retired
   end
+
+  def self.top_20
+    self.order("RANDOM()").limit(20)
+  end
 end

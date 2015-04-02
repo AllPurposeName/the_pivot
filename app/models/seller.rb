@@ -11,4 +11,8 @@ class Seller < ActiveRecord::Base
   def name
     self.user.username
   end
+
+  def self.top_3
+   self.order("RANDOM()").limit(3)
+  end
 end
