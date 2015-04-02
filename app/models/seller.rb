@@ -1,6 +1,6 @@
 class Seller < ActiveRecord::Base
   has_one :user, as: :userable
-  has_many :cats, inverse_of: :sellers
+  has_many :cats
   validates :slug, uniqueness: true
   before_save :generate_slug
 

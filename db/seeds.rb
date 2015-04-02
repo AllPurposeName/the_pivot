@@ -7,6 +7,7 @@ class Seed
     generate_users
     generate_orders
     generate_default_user
+    generate_croc_pot
   end
 
   def self.call
@@ -67,9 +68,23 @@ class Seed
   def generate_sellers
     10.times do
       seller = FactoryGirl.create(:seller)
-      user = FactoryGirl.create(:user, username: Faker::Name.name, email: Faker::Internet.email, userable_id: seller.id, userable_type: "Seller")
+      FactoryGirl.create(:user, username: Faker::Name.name, email: Faker::Internet.email, userable_id: seller.id, userable_type: "Seller")
       puts "Created Seller: #{seller.store_name}"
     end
+  end
+
+  def generate_croc_pot
+    seller = FactoryGirl.create(:seller, store_name: "The Croc Pot")
+    FactoryGirl.create(:user, username: "croc", email: "croc@croc.com", userable_id: seller.id, userable_type: "Seller")
+    seller.cats.create(name: "Midnight Croc", price: 100000, image_path: "crocjacket.jpg", description: "Luxurious in black.")
+    seller.cats.create(name: "Croc Wallet", price: 30000, image_path: "crocwallet.jpg", description: "Moneybag for him.")
+    seller.cats.create(name: "Croc Purse", price: 300000, image_path: "crocbag.jpg", description: "Moneybag for her.")
+    seller.cats.create(name: "Croc Shoes", price: 10000, image_path: "crocshoes.jpg", description: "Walk on thin croc.")
+    seller.cats.create(name: "Fire Croc", price: 100000, image_path: "crockjacketred.jpg", description: "Luxurious in red.")
+    seller.cats.create(name: "Croc Watchcase", price: 10000, image_path: "crocwatchcase.jpg", description: "Helps keep your croc skin watches taut.")
+    seller.cats.create(name: "Croc Casual Shoes", price: 10000, image_path: "croccasualshoes.jpg", description: "Relax, it's just croc skin.")
+    seller.cats.create(name: "Croc Boots", price: 10000, image_path: "crocboots.jpg", description: "These boots were made for croc'n.")
+    seller.cats.create(name: "Croc Gloves", price: 10000, image_path: "crocgloves.jpg", description: "Rock, paper, crock!")
   end
 
   def image
