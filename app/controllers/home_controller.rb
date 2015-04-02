@@ -7,6 +7,10 @@ class HomeController < ApplicationController
     set_random_cats
   end
 
+  def sellers
+    set_random_sellers
+  end
+
   private
 
   def set_breeds
@@ -19,5 +23,9 @@ class HomeController < ApplicationController
 
   def set_random_cats
     @cats = Cat.order("RANDOM()")
+  end
+
+  def set_random_sellers
+    @sellers = Seller.order("RANDOM()")
   end
 end
