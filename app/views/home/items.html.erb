@@ -1,0 +1,11 @@
+<h3 class="text-center">BROWSE ALL GARMENTS</h3>
+<div id="masonry-container" class="text-center">
+  <% @cats.each do |cat| %>
+    <div class="item">
+      <%= link_to image_tag(cat.image_path), seller_cat_path(id: cat.id, slug: cat.slug) %>
+      <figcaption>
+        <%= link_to cat.name, seller_cat_path(id: cat.id, slug: cat.slug) %>
+      </figcaption>
+    </div>
+  <% end %>
+</div>
