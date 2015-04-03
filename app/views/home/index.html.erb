@@ -32,7 +32,7 @@
 <div class="masonry-container center-block" id="garment-container">
   <% @cats.each do |cat| %>
     <div class="item">
-      <%= link_to image_tag(cat.image_path), "cats/#{cat.id}" %>
+      <%= link_to image_tag(cat.image_path), seller_cat_path(slug: cat.slug, id: cat.id) %>
     </div>
     <br>
     <br>
