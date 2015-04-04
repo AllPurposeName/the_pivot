@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
   end
 
   def logout
-    #session.clear
     session[:user_id] = nil
     reset_cart
     redirect_to root_path
