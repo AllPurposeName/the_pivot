@@ -2,15 +2,14 @@ class SessionsController < ApplicationController
   include ResetCart
 
   def new
-
   end
 
   def logout
+    #session.clear
     session[:user_id] = nil
     reset_cart
     redirect_to root_path
   end
-
 
   def create
     user = User.find_by(username: params[:session][:username])

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <link href='http://fonts.googleapis.com/css?family=Crushed|Righteous|Comfortaa:400,700,300|Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
-  <title>Hand Me Ups</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Crushed|Righteous|Comfortaa:400,700,300|Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+    <title>Hand Me Ups</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
 
   <body>
 
@@ -21,26 +21,27 @@
             <span class="icon-bar"></span>
           </button>
           <%= link_to image_tag("handmeups.png"), root_path, class: "navbar-brand" %>
-          </a>
-        </div>
+        </a>
+      </div>
 
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "home", root_path %></li>
-            <li><%= link_to "stores", stores_path %></li>
-            <li><%= link_to "cart", cart_path %></li>
-            <li><%= link_to "breeds", breeds_path %></li>
-            <li><%= link_to "orders", orders_path %></li>
-            <% if current_user && current_user.admin? %>
-              <%= render "layouts/admin_nav" %>
-            <% end %>
-            <% if !current_user %>
-              <li><%= link_to "login", login_path %></li>
-            <% else %>
-              <li> <%= link_to "logout", logout_path %></li>
-            <% end %>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "home", root_path %></li>
+          <li><%= link_to "stores", stores_path %></li>
+          <li><%= link_to "cart", cart_path %></li>
+          <li><%= link_to "breeds", breeds_path %></li>
+          <li><%= link_to "orders", orders_path %></li>
+          <% if current_user && current_user.admin? %>
+            <%= render "layouts/admin_nav" %>
+          <% end %>
+          <% if !current_user %>
+            <li><%= link_to "Sign Up", new_user_path %></li>
+            <li><%= link_to "Login", login_path %></li>
+          <% else %>
+            <li> <%= link_to "Logout", logout_path %></li>
+          <% end %>
 
-            <!-- <li class="dropdown">
+          <!-- <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">SERVICES<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="construction.html">Construction</a></li>
@@ -53,20 +54,20 @@
               <li><a href="consulting.html">Consulting</a></li>
               <li><a href="contents.html">Contents</a></li>
             </ul>
-            </li> -->
-          </ul>
-        </div>
-
+          </li> -->
+        </ul>
       </div>
-    </div>
 
-    <div id="main-container" class="container">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash-#{name}" %>
-      <% end %>
-      <div class='yield-style'>
-        <%= yield %>
-      </div>
     </div>
-  </body>
+  </div>
+
+  <div id="main-container" class="container">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash-#{name}" %>
+    <% end %>
+    <div class='yield-style'>
+      <%= yield %>
+    </div>
+  </div>
+</body>
 </html>
