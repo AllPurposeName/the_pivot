@@ -11,7 +11,11 @@ class UsersController < ApplicationController
     else
       flash[:success] = "Now you can buy some natural, handmade clothes!"
       session[:user_id] = user.id
-      redirect_to root_path
+      if session[:order_cats_controller]
+        redirect_to cart_path
+      else
+        redirect_to root_patah
+      end
     end
   end
 

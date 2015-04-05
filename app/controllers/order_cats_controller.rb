@@ -12,6 +12,7 @@ class OrderCatsController < ApplicationController
       end
     else
       flash[:danger] = "Please login or sign up to continue checkout."
+      session[:order_cats_controller] = request.env['PATH_INFO']
       redirect_to login_path
     end
   end
