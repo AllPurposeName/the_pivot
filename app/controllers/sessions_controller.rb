@@ -2,11 +2,11 @@ class SessionsController < ApplicationController
   include ResetCart
 
   def new
+    @user = User.new
   end
 
   def logout
-    session[:user_id] = nil
-    reset_cart
+    session.clear
     redirect_to root_path
   end
 
@@ -21,11 +21,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
     elsif user && user.authenticate(params[:session][:password])
         session[:user_id] = user.id
-      if session[:order_cats_controller]
-        redirect_to cart_path
-      else
-        redirect_to root_patah
-      end
+        redirect_to :back
     else
       try_again
     end

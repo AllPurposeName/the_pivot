@@ -36,7 +36,11 @@
           <% end %>
           <% if !current_user %>
             <li><%= link_to "Sign Up", new_user_path %></li>
-            <li><%= link_to "Login", login_path %></li>
+            <li>
+              <a href="#" data-toggle="modal" data-target="#loginModal">
+                Login
+              </a>
+            </li>
           <% else %>
             <li> <%= link_to "Logout", logout_path %></li>
           <% end %>
@@ -69,13 +73,8 @@
       <%= yield %>
     </div>
   </div>
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    Launch demo modal
-  </button>
-
   <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -83,17 +82,8 @@
           <h4 class="modal-title" id="myModalLabel">Login</h4>
         </div>
         <div class="modal-body">
-          <%= form_for :website, url: "/users" do |f| %>
-            <%= f.text_field :email, class: "form-control" %>
-            <%= f.password_field :password, class: "form-control" %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-            <%= f.submit "Log in", class: "btn btn-success" %>
-          <% end %>
+          <%= render "partials/login_form" %>
         </div>
       </div>
-    </div>
-  </div>
-</body>
-</html>
+    </body>
+  </html>
