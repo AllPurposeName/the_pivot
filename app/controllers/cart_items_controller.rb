@@ -35,5 +35,4 @@ class CartItemsController < ApplicationController
     redirect_to cart_path(cart_contents: @cart.contents)
   end
 
-
 end

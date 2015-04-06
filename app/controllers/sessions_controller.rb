@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
   end
 
   def logout
-    #session.clear
     session[:user_id] = nil
     reset_cart
     redirect_to root_path
@@ -21,8 +20,12 @@ class SessionsController < ApplicationController
       redirect_to '/admin/inventory'
       session[:user_id] = user.id
     elsif user && user.authenticate(params[:session][:password])
-      redirect_to '/'
-      session[:user_id] = user.id
+        session[:user_id] = user.id
+      if session[:order_cats_controller]
+        redirect_to cart_path
+      else
+        redirect_to root_patah
+      end
     else
       try_again
     end
