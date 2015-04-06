@@ -3,5 +3,8 @@
   <%= f.text_field :email, placeholder: "Email" %>
   <%= f.text_field :full_name, placeholder: "Full Name" %>
   <%= f.password_field :password, placeholder: "Password" %>
-  <%= f.submit "Sign up"%>
-<% end %>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" data-dismiss="modal">cancel</button>
+    <%= f.submit "sign up", class: "btn btn-success"%>
+  <% end %>
+</div>
