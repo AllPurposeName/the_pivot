@@ -14,10 +14,9 @@
       <tr>
         <td><%= cat.name %></td>
         <td><%= cat.description %></td>
-        <td><%= cat.price %></td>
+        <td><%= cat.monify %></td>
         <td><%= cat.quantity(order.id) %></td>
-        <td><% cat.price = (cat.quantity(order.id) * cat.price) %></td>
-            <%= cat.monify%>
+        <td><%= cat.monify((cat.quantity(order.id) * cat.price)) %></td>
       </tr>
     <% end %>
     <tr>
