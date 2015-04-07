@@ -42,6 +42,7 @@ gem 'factory_girl_rails', "~> 4.0"
 gem 'rails_12factor', group: :production
 
 group :development, :test do
+  gem 'capistrano'
   gem 'irbtools'
   gem 'awesome_print'
   gem 'capybara'
