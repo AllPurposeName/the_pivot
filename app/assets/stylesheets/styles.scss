@@ -1,6 +1,40 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$salmon: #BF7582;
+$plum: #4C4A59;
+$sand:#F2DFCE;
+$peach: #D99B84;
+$brown: #734A40;
+$teal: #75bfb2;
+
+body {
+  background-color: $sand;
+}
+
+.btn-danger {
+  background-color: $salmon;
+  border-color: $salmon;
+}
+
+.btn-danger:hover, .btn-danger:focus {
+  background-color: $salmon;
+  border-color: $salmon;
+}
+
+.btn-success {
+  background-color: $teal;
+  border-color: $teal;
+}
+
+.btn-success:hover, .btn-success:focus {
+  background-color: $teal;
+  border-color: $teal;
+}
+
+.navbar{
+  background-color: $plum;
+}
 
 .container#main-container {
   margin-top: 80px;
@@ -11,7 +45,6 @@
 }
 
 .navbar.navbar-default.navbar-fixed-top {
-  background-color: rgba(50,50,50,1);
 }
 
 .navbar-inverse .navbar-nav > li > a  {
