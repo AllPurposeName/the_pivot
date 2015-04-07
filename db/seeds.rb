@@ -25,7 +25,7 @@ class Seed
   def generate_default_user
     # Use build inside of create blocks to set up associations
     FactoryGirl.create(:user, username: "Richard", email: "richard@example.com") do |user|
-      user.orders.build do |order|
+      user.orders.create do |order|
         order.cats << Cat.order("RANDOM()").limit(1).first
       end
     end
@@ -61,7 +61,7 @@ class Seed
     seller_count = Seller.count
     100.times do
       category = Breed.order("RANDOM()").limit(1).first
-      item = category.cats.create(name: Faker::Commerce.product_name, price: Faker::Commerce.price.to_i, image_path: image, description: "x", seller_id: rand(1..seller_count))
+      item = category.cats.create(name: Faker::Commerce.product_name, price: Faker::Commerce.price.to_i * 100, image_path: image, description: "x", seller_id: rand(1..seller_count))
       puts "Created Item: #{item.name}"
     end
   end

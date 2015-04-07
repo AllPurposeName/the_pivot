@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       if session[:order_cats_controller]
         redirect_to cart_path
       else
-        redirect_to root_patah
+        redirect_to root_path
       end
     end
   end
