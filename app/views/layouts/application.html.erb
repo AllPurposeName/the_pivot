@@ -21,7 +21,6 @@
             <span class="icon-bar"></span>
           </button>
           <%= link_to image_tag("handmeups.png"), root_path, class: "navbar-brand" %>
-        </a>
       </div>
 
       <div class="collapse navbar-collapse">
@@ -64,7 +63,9 @@
 
     </div>
   </div>
-
+  <div class="row">
+     <div class="col-md-3">.col-md-3</div>
+     <div class="col-md-8">.col-md-8
   <div id="main-container" class="container">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, :id => "flash-#{name}" %>
@@ -84,6 +85,8 @@
         <div class="modal-body">
           <%= render "partials/login_form" %>
         </div>
-      </div>
+      </div></div>
+      <div class="col-md-2">.col-md-2</div>
+    </div>
     </body>
   </html>

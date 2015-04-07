@@ -1,33 +1,33 @@
-require 'bundler/capistrano'
-
-lock '3.4.0'
-set :format, :pretty
-set :log_level, :debug
-set :application, "Hand Me Ups"
-set :repository,  "git@github.com:AllPurposeName/the_pivot.git"
-set :deploy_to, "/var/www/handmeups.clothing"
-set :scm, :git
-set :branch, "master"
-set :user, "demo"
-set :use_sudo, false
-set :rails_env, "production"
-set :deploy_via, :copy
-set :ssh_options, { :forward_agent => true, :port => 4444 }
-set :keep_releases, 5
-default_run_options[:pty] = true
-server "example.com", :app, :web, :db, :primary => true
-# Default value for :pty is false
-# set :pty, true
-
-namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-
-  desc "Symlink shared config files"
-  task :symlink_config_files do
-    run "#{ sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
-  end
-end
+#require 'bundler/capistrano'
+#
+#lock '3.4.0'
+#set :format, :pretty
+#set :log_level, :debug
+#set :application, "Hand Me Ups"
+#set :repository,  "git@github.com:AllPurposeName/the_pivot.git"
+#set :deploy_to, "/var/www/handmeups.clothing"
+#set :scm, :git
+#set :branch, "master"
+#set :user, "demo"
+#set :use_sudo, false
+#set :rails_env, "production"
+#set :deploy_via, :copy
+#set :ssh_options, { :forward_agent => true, :port => 4444 }
+#set :keep_releases, 5
+#default_run_options[:pty] = true
+#server "example.com", :app, :web, :db, :primary => true
+## Default value for :pty is false
+## set :pty, true
+#
+#namespace :deploy do
+#  task :start do ; end
+#  task :stop do ; end
+#
+#  desc "Symlink shared config files"
+#  task :symlink_config_files do
+#    run "#{ sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
+#  end
+#end
 # config valid only for current version of Capistrano
 
 
