@@ -33,8 +33,7 @@ gem 'cancancan'
 gem 'faker'
 gem 'masonry-rails'
 gem 'factory_girl_rails', "~> 4.0"
-# Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -50,9 +49,8 @@ group :development, :test do
   gem 'pry'
   gem 'byebug'
   gem 'database_cleaner'
-  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   gem 'rspec-rails'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'better_errors'
 end

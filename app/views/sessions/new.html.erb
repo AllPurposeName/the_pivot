@@ -1,6 +1,12 @@
+<h3>Login</h3>
 <%= form_for(:session, url: login_path) do |f| %>
-<%= f.text_field :username %>
-<%= f.password_field :password %>
-<%= f.submit "log in"%>
+  <%= f.text_field :username %>
+  <%= f.password_field :password %>
+  <%= f.submit "log in"%>
 <% end %>
-<%= link_to "not now", root_path %>
+<h3>
+  <%= link_to "Sign up", new_user_path  %>
+  for an account
+</h3>
+<%= render "partials/sign_up_modal" %>
+<%= link_to "Cancel", root_path %>
