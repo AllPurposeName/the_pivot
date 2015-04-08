@@ -1,10 +1,7 @@
 <%= form_for @user do |f| %>
-  <%= f.text_field :username, placeholder: "Username" %>
-  <%= f.text_field :email, placeholder: "Email" %>
-  <%= f.text_field :full_name, placeholder: "Full Name" %>
-  <%= f.password_field :password, placeholder: "Password" %>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-danger" data-dismiss="modal">cancel</button>
-    <%= f.submit "sign up", class: "btn btn-success"%>
-  <% end %>
-</div>
+  <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
+  <%= f.text_field :email, placeholder: "Email", class: "form-control"  %>
+  <%= f.text_field :full_name, placeholder: "Full Name", class: "form-control"  %>
+  <%= f.password_field :password, placeholder: "Password", class: "form-control"  %>
+  <%= f.submit "sign up", class: "btn btn-success center-block"%>
+<% end %>
