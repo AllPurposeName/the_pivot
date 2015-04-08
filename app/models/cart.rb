@@ -41,8 +41,8 @@ class Cart
     if !@contents.any? do |content|
       content[0].empty?
     end
-      set_cats_and_quantity
-      sum_price
+    set_cats_and_quantity
+    sum_price
     end
   end
 
