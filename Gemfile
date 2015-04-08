@@ -53,4 +53,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'spring'
   gem 'better_errors'
+  gem 'brakeman', :require => false
 end
