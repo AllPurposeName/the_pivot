@@ -3,13 +3,27 @@
 
 $salmon: #BF7582;
 $plum: #4C4A59;
-$sand:#F2DFCE;
+$sand: #F2DFCE;
+$light-sand: #FAF3ED;
 $peach: #D99B84;
 $brown: #734A40;
 $teal: #75bfb2;
 
 body {
+  font-family: "Helvetica", sans-serif;
+  color: $plum;
   background-color: $sand;
+}
+
+form {
+  margin: auto;
+}
+
+.modal-content {
+  background-color: $sand;
+  width: 300px;
+  margin: auto;
+  margin-top: 35%;
 }
 
 .btn-danger {
@@ -32,6 +46,10 @@ body {
   border-color: $teal;
 }
 
+.form-control {
+  width: 180px;
+}
+
 .navbar{
   background-color: $plum;
 }
@@ -44,16 +62,16 @@ body {
   padding-right: 50px;
 }
 
-.navbar.navbar-default.navbar-fixed-top {
+.navbar-inverse .navbar-nav > li > a  {
+  font-weight: bold;
+  color: $salmon;
 }
 
-.navbar-inverse .navbar-nav > li > a  {
-  font-family: 'Comfortaa', Arial, serif; font-weight: 400;
-  text-transform: uppercase;
+.navbar-inverse .navbar-nav > li > a:hover,a:focus  {
+  color: $sand;
 }
 
 .yield-style {
-  font-family: 'Open Sans Condensed', Arial, serif; font-weight: 400;
   font-size: 1.5em;
 }
 
@@ -63,17 +81,13 @@ body {
   text-align: center;
 }
 
-
 h1 {
-  font-family: 'Comfortaa', Arial, serif; font-weight: 400;
   font-size: 1.5em;
   text-align: center;
 }
 
 #logo-home > h1 {
-  font-family: 'Comfortaa', Arial, serif; font-weight: 400;
   font-size: 2.3em;
-  font-weight: 700;
 }
 
 #order-title {
@@ -108,6 +122,8 @@ a:hover {
   height: auto;
   margin: auto;
   display: block;
+  border-radius: 2px;
+  border: 6px solid $plum;
 }
 
 .item img {
@@ -141,8 +157,6 @@ a:hover {
 }
 
 #seller-profile {
-	/*display: inline;*/
-  /*position: relative;*/
   margin-top: 120px;
   border: 2px solid black;
 }

@@ -1,20 +1,19 @@
 <%= image_tag("handmeups.png", class: "img-responsive center-block" ) %>
 
 <div id="logo-home">
-  <h1>Custom handmade clothing,
-    <br>from our sellers to you.
-    <br>Wear exactly what you want,
-    <br>not what your mother gave you.
+  <h1>
+    Custom natural clothing,<br>
+    handed up from our sellers to you.
   </h1>
 </div>
 
-<h2 class="text-center">CATEGORIES</h2>
+<h2 class="text-center">Categories</h2>
 <div class="text-center">
   <% @breeds.each do |breed| %>
-    <%= link_to "#{breed.name}", "breeds/#{breed.name.downcase}"%> |
+    <%= link_to "#{breed.name}", "breeds/#{breed.name.downcase}"%>&nbsp;&nbsp;
   <% end %>
 </div>
-<h2 class="text-center">TOP 3 STORES</h2>
+<h2 class="text-center">Featured Stores</h2>
 <div class="masonry-container center-block" id="seller-container">
   <br>
   <br>
@@ -28,7 +27,7 @@
 </div>
 <br>
 
-<h2 class="text-center">TOP 20 GARMENTS</h2>
+<h2 class="text-center">Top Sellers</h2>
 <div class="masonry-container center-block" id="garment-container">
   <% @cats.each do |cat| %>
     <div class="item">
