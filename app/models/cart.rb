@@ -1,6 +1,6 @@
 class Cart
   include Monify
-  attr_reader :contents, :cats_and_quantity, :price
+  attr_reader :contents, :cats_quantity, :price
 
   def initialize(cart_data)
     @contents = cart_data || Hash.new(0)
@@ -25,9 +25,9 @@ class Cart
   end
 
   def create_order_cats(order)
-    cats_and_quantity.each do |cat_and_quantity|
-      order.order_cats.create(cat_id: cat_and_quantity[0]["id"],
-                              quantity: cat_and_quantity[1])
+    @contents.each do |cat_id, quantity|
+      order.order_cats.create(cat_id: cat_id,
+                              quantity: quantity)
     end
   end
 
@@ -35,30 +35,34 @@ class Cart
     monify
   end
 
+  def subtotal(cat)
+    monify(@contents[cat.id.to_s] * Cat.find(cat).price)
+  end
+
   private
 
   def update
-    if !@contents.any? do |content|
-      content[0].empty?
-    end
-    set_cats_and_quantity
-    sum_price
+    if no_content_empty?
+      set_cats_quantity
+      sum_price
     end
   end
 
-  def set_cats_and_quantity
-    cats = []
-    quantity = []
-    contents.each do |cats_and_quantity|
-      quantity << cats_and_quantity[1].to_i
-      cats << Cat.find(cats_and_quantity[0])
+  def no_content_empty?
+    @contents.none? do |content|
+      content[0].empty?
     end
-    @cats_and_quantity = cats.zip(quantity)
+  end
+
+  def set_cats_quantity
+    @cats_quantity = @contents.each_with_object(Hash.new(0)) do |(cat_id, quantity), hash|
+    hash[Cat.find(cat_id)] = quantity
+    end
   end
 
   def sum_price
-    @price = cats_and_quantity.inject(0) do |sum, item|
-      sum += (item[0].price * item[1])
+    @price = cats_quantity.inject(0) do |sum, (item, quantity)|
+      sum += (item.price * quantity)
       sum
     end
   end

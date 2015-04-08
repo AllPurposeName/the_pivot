@@ -1,8 +1,7 @@
 class CartItemsController < ApplicationController
 
   def show
-    if @cart.cats_and_quantity
-      @cart
+    if @cart.cats_quantity
       session[:cart_data] = @cart.contents
       render :show
     else
@@ -34,5 +33,4 @@ class CartItemsController < ApplicationController
     session[:cart_data] = @cart.contents
     redirect_to cart_path(cart_contents: @cart.contents)
   end
-
 end

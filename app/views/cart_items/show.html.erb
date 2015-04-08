@@ -10,25 +10,24 @@
     <th>Total Price</th>
   </tr>
 
-  <% @cart.cats_and_quantity.each do |cat| %>
+  <% @cart.cats_quantity.each do |cat, quantity| %>
     <tr>
-      <td><%= cat[0].name %></td>
-      <td><%= cat[0].description %></td>
-      <td><%= cat[0].monify %></td>
-      <td><%= link_to "", decrement_cart_items_path(id: cat[0].id), method: :put, class: "glyphicon glyphicon-minus", id: "minus-#{cat[0].id}" %></td>
-      <td><%= cat[1] %></td>
-      <td><%= link_to "", increment_cart_items_path(id: cat[0].id), method: :patch, class: "glyphicon glyphicon-plus", id: "plus-#{cat[0].id}" %></td>
+      <td><%= cat.name %></td>
+      <td><%= cat.description %></td>
+      <td><%= cat.monify %></td>
+      <td><%= link_to "", decrement_cart_items_path(id: cat.id), method: :put, class: "glyphicon glyphicon-minus", id: "minus-#{cat.id}" %></td>
+      <td><%= quantity %></td>
+      <td><%= link_to "", increment_cart_items_path(id: cat.id), method: :patch, class: "glyphicon glyphicon-plus", id: "plus-#{cat.id}" %></td>
       <td>
-        <% cat[0].price = (cat[1] * cat[0].price) %>
-        <%= cat[0].monify%>
+        <%= @cart.subtotal(cat)%>
       </td>
-      <td><%= link_to "", cart_items_path(id: cat[0].id), method: :delete, class: "glyphicon glyphicon-remove", id: "remove-#{cat[0].id}"%></td>
+      <td><%= link_to "", cart_items_path(id: cat.id), method: :delete, class: "glyphicon glyphicon-remove", id: "remove-#{cat.id}"%></td>
     </tr>
   <% end %>
 </table>
 <h3 id="order-title"> Order subtotal: <%= @cart.total_monify %></h3>
 
-<% if @cart.cats_and_quantity != [] %>
+<% unless @cart.cats_quantity.empty? %>
   <% if current_user %>
     <%= button_to "checkout", order_cats_path, id: "order-title", class: "btn btn-success"%>
   <% else %>
