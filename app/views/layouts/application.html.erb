@@ -16,7 +16,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to image_tag("handmeups.png"), root_path, class: "navbar-brand" %>
+          <%= link_to image_tag("handmeup.png"), root_path, class: "navbar-brand" %>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -32,28 +32,28 @@
             <% if !current_user %>
               <li><%= link_to "sign up", new_user_path %></li>
               <li>
-                <a href="#" data-toggle="modal" data-target="#loginModal">
-                  login
-                </a>
+              <a href="#" data-toggle="modal" data-target="#loginModal">
+                login
+              </a>
               </li>
             <% else %>
               <li> <%= link_to "logout", logout_path %></li>
             <% end %>
 
             <!-- <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">SERVICES<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="construction.html">Construction</a></li>
-                <li><a href="water.html">Water</a></li>
-                <li><a href="mold.html">Mold</a></li>
-                <li><a href="fire.html">Fire</a></li>
-                <li><a href="smoke.html">Smoke</a></li>
-                <li><a href="biohazardous.html">Bio and Hazardous Material</a></li>
-                <li><a href="roofing.html">Roofing</a></li>
-                <li><a href="consulting.html">Consulting</a></li>
-                <li><a href="contents.html">Contents</a></li>
-                cum;
-              </ul>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">SERVICES<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="construction.html">Construction</a></li>
+              <li><a href="water.html">Water</a></li>
+              <li><a href="mold.html">Mold</a></li>
+              <li><a href="fire.html">Fire</a></li>
+              <li><a href="smoke.html">Smoke</a></li>
+              <li><a href="biohazardous.html">Bio and Hazardous Material</a></li>
+              <li><a href="roofing.html">Roofing</a></li>
+              <li><a href="consulting.html">Consulting</a></li>
+              <li><a href="contents.html">Contents</a></li>
+              cum;
+            </ul>
             </li> -->
           </ul>
         </div>
@@ -65,7 +65,11 @@
       <div class="col-md-8"></div>
       <div id="main-container" class="container">
         <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg, :id => "flash-#{name}" %>
+          <%= content_tag :div, msg, :id => "flash-#{name}", :class => "alert alert-danger" %>
+        <% end %>
+        <% if flash.count > 1 %>
+              <a href="#" data-toggle="modal" data-target="#loginModal">
+                <%= link_to "Try signing in again!", "#",  class: "alert-link alert alert-success", "data-toggle"=>"modal", "data-target"=>"#loginModal" %>
         <% end %>
         <div class='yield-style'>
           <%= yield %>

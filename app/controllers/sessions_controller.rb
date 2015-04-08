@@ -20,8 +20,8 @@ class SessionsController < ApplicationController
       redirect_to '/admin/inventory'
       session[:user_id] = user.id
     elsif user && user.authenticate(params[:session][:password])
-        session[:user_id] = user.id
-        redirect_to :back
+      session[:user_id] = user.id
+      redirect_to :back
     else
       try_again
     end
@@ -30,7 +30,14 @@ class SessionsController < ApplicationController
   private
 
   def try_again
-    flash[:tryagain] = "Whoops, try again"
-    render :new
+    @user = User.create(session_params)
+    @user.errors.messages.each do |field, msg|
+      flash[field] = "#{field.to_s.humanize} #{msg[0]}"
+    end
+    redirect_to :back
+  end
+
+  def session_params
+    params.require(:session).permit(:username, :password)
   end
 end

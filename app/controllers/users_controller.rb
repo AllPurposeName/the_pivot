@@ -4,13 +4,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    unless user.save
+    @user = User.new(user_params)
+    unless @user.save
       flash[:danger] = "Please enter valid credenials."
       render :new
     else
       flash[:success] = "Now you can buy some natural, handmade clothes!"
-      session[:user_id] = user.id
+      session[:user_id] = @user.id
       if session[:order_cats_controller]
         redirect_to cart_path
       else
