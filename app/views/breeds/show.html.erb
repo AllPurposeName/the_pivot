@@ -1,12 +1,12 @@
 <%= render "layouts/carousel" %>
 
-<div id="breed-single">
+<div id="breed-single" class="align-text-center">
 
   <h1> <%= @breed.name.capitalize %> </h1>
 
   <h2> <%= @breed.description.capitalize %> </h2>
 
-  <h3 id="status"> <%= @breed.availability %> </h3>
+  <h3> <%= @breed.availability %> </h3>
 
   <div class="masonry-container center-block" id="garment-container">
     <% @cats.each do |cat| %>
