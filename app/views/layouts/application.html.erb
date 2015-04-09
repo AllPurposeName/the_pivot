@@ -64,47 +64,49 @@
 
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-8"></div>
-      <div id="main-container" class="container">
+    <div id="main-container" class="container">
+      <% if flash.count > 0 %>
         <div class="alert alert-danger">
+        <% end %>
         <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg, :id => "flash-#{name}" %>
+          <%= content_tag :div, msg, :id => "flash-#{name}", class: "text-center" %>
         <% end %>
-        </div>
-        <% if flash.count > 1 %>
-          <%= link_to "Try signing in again!", "#",  class: "alert-link alert alert-success", "data-toggle"=>"modal", "data-target"=>"#loginModal"%>
-        <% end %>
-        <div class='yield-style'>
-          <%= yield %>
-        </div>
       </div>
-      <!-- Signup Modal -->
-      <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Please sign up.</h4>
-            </div>
-            <div class="modal-body">
-              <%= render "partials/sign_up_form" %>
-            </div>
+      <% if flash.count > 1 %>
+        <div class="alert-link alert alert-success text-center">
+          <%= link_to "Click here to try signing in again!", "#", "data-toggle"=>"modal", "data-target"=>"#loginModal"%>
+        </div>
+      <% end %>
+      <div class='yield-style'>
+        <%= yield %>
+      </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Please sign up.</h4>
+          </div>
+          <div class="modal-body">
+            <%= render "partials/sign_up_form" %>
           </div>
         </div>
       </div>
-      <!-- Login Modal -->
-      <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Please log in.</h4>
-            </div>
-            <div class="modal-body">
-              <%= render "partials/login_form" %>
-            </div>
+    </div>
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Please log in.</h4>
           </div>
-        </body>
-      </html>
+          <div class="modal-body">
+            <%= render "partials/login_form" %>
+          </div>
+        </div>
+      </body>
+    </html>
