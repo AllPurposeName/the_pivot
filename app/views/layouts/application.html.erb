@@ -30,7 +30,11 @@
               <%= render "layouts/admin_nav" %>
             <% end %>
             <% if !current_user %>
-              <li><%= link_to "sign up", new_user_path %></li>
+              <li>
+              <a href="#" data-toggle="modal" data-target="#signupModal">
+                sign up
+              </a>
+              </li>
               <li>
               <a href="#" data-toggle="modal" data-target="#loginModal">
                 login
@@ -74,7 +78,21 @@
           <%= yield %>
         </div>
       </div>
-      <!-- Modal -->
+      <!-- Signup Modal -->
+      <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Please sign up.</h4>
+            </div>
+            <div class="modal-body">
+              <%= render "partials/sign_up_form" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Login Modal -->
       <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
