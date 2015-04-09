@@ -68,9 +68,11 @@
       <div class="col-md-1"></div>
       <div class="col-md-8"></div>
       <div id="main-container" class="container">
+        <div class="alert alert-danger">
         <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg, :id => "flash-#{name}", :class => "alert alert-danger" %>
+          <%= content_tag :div, msg, :id => "flash-#{name}" %>
         <% end %>
+        </div>
         <% if flash.count > 1 %>
           <%= link_to "Try signing in again!", "#",  class: "alert-link alert alert-success", "data-toggle"=>"modal", "data-target"=>"#loginModal"%>
         <% end %>
