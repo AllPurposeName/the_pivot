@@ -4,13 +4,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    unless user.save
-      flash[:danger] = "Please enter valid credenials."
-      render :new
+    @user = User.new(user_params)
+    unless @user.save
+      try_signup_again
     else
       flash[:success] = "Now you can buy some natural, handmade clothes!"
-      session[:user_id] = user.id
+      session[:user_id] = @user.id
       if session[:order_cats_controller]
         redirect_to cart_path
       else
@@ -19,7 +18,18 @@ class UsersController < ApplicationController
     end
   end
 
+  private
+
   def user_params
     params.require(:user).permit(:username, :email, :full_name, :password)
   end
+
+  def try_signup_again
+    @user = User.create(user_params)
+    @user.errors.messages.each do |field, msg|
+      flash[field] = "#{field.to_s.humanize} #{msg[0]}"
+    end
+    redirect_to :back
+  end
+
 end
