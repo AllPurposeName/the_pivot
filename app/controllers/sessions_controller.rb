@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(username: params[:session][:username])
     if !user
-      return try_again
+      return try_login_again
     end
     if user.admin? && user.authenticate(params[:session][:password])
       flash[:welcomeadmin] = "Welcome, #{user.username.capitalize}!"
@@ -23,21 +23,21 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to :back
     else
-      try_again
+      try_login_again
     end
   end
 
   private
 
-  def try_again
-    @user = User.create(session_params)
+  def user_params
+    params.require(:session).permit(:username, :password)
+  end
+
+  def try_login_again
+    @user = User.create(user_params.merge({full_name: "failed_login", email: "failed@example.com"}))
     @user.errors.messages.each do |field, msg|
       flash[field] = "#{field.to_s.humanize} #{msg[0]}"
     end
     redirect_to :back
-  end
-
-  def session_params
-    params.require(:session).permit(:username, :password)
   end
 end

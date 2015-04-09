@@ -16,7 +16,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to image_tag("handmeup.png"), root_path, class: "navbar-brand" %>
+          <%= link_to image_tag("handlogo.png"), root_path, class: "navbar-brand" %>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -68,8 +68,7 @@
           <%= content_tag :div, msg, :id => "flash-#{name}", :class => "alert alert-danger" %>
         <% end %>
         <% if flash.count > 1 %>
-              <a href="#" data-toggle="modal" data-target="#loginModal">
-                <%= link_to "Try signing in again!", "#",  class: "alert-link alert alert-success", "data-toggle"=>"modal", "data-target"=>"#loginModal" %>
+          <%= link_to "Try signing in again!", "#",  class: "alert-link alert alert-success", "data-toggle"=>"modal", "data-target"=>"#loginModal"%>
         <% end %>
         <div class='yield-style'>
           <%= yield %>
