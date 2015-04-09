@@ -10,7 +10,7 @@
 <h2 class="text-center">Categories</h2>
 <div class="text-center">
   <% @breeds.each do |breed| %>
-    <%= link_to "#{breed.name}", "breeds/#{breed.name.downcase}"%>&nbsp;&nbsp;
+    <%= link_to "#{breed.name}", breed_path(name: breed.name) %>
   <% end %>
 </div>
 <h2 class="text-center">Featured Stores</h2>

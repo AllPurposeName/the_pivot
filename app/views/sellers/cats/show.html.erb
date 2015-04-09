@@ -1,4 +1,4 @@
-<div id="cat-single">
+<div id="cat-single" class="align_text_center text-center">
 
   <div class="image-cat-single">
     <%= image_tag @cat.image_path %>
@@ -9,8 +9,8 @@
 
   <h2><%= @cat.description.capitalize %></h2>
 
-  <h3 id="status"> <%= @cat.availability %></h3>
+  <h3> <%= @cat.availability %></h3>
   <% if @cat.retired? == false %>
-    <%= button_to "add to cart", cart_items_path(id: @cat.id), class: "btn btn-success" %>
+    <%= button_to "add to cart", cart_items_path(id: @cat.id), class: "btn btn-success center-block"%>
   <% end %>
 </div>
