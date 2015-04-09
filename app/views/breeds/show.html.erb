@@ -8,11 +8,14 @@
 
   <h3 id="status"> <%= @breed.availability %> </h3>
 
-  <div class="list">
+  <div class="masonry-container center-block" id="garment-container">
     <% @cats.each do |cat| %>
-      <%= link_to "cat_#{cat.name}", cat_path(cat.id) %>
+      <div class="item">
+        <%= link_to image_tag(cat.image_path), seller_cat_path(id: cat.id, slug: cat.slug) %>
+        <figcaption>
+        <%= link_to cat.name, seller_cat_path(id: cat.id, slug: cat.slug) %>
+        </figcaption>
+      </div>
     <% end %>
-    <br>
   </div>
-
 </div>
