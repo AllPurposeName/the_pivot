@@ -1,6 +1,6 @@
 require "rails_helper"
 describe "admin creating mode" do
-  context "for garmentegories" do
+  context "for categories" do
     xit "allows admin to create a new category" do
       create(:user, role: 1)
       visit new_admin_category_path
@@ -14,7 +14,7 @@ describe "admin creating mode" do
       within("#flash-newcomplete") do
         expect(page).to have_content("Test new name created!")
       end
-      expect(current_path).to eq("/admin/garmentegories/test_new_name")
+      expect(current_path).to eq("/admin/categories/test_new_name")
     end
 
     xit "doesn't allow the admin to not fill in any fields" do

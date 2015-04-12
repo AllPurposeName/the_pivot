@@ -1,6 +1,6 @@
 require "rails_helper"
 describe "admin editing mode" do
-  context "for garmentegories" do
+  context "for categories" do
     xit "allows admin to change all fields" do
       create(:user, role: 1)
       category = create(:breed)
@@ -15,7 +15,7 @@ describe "admin editing mode" do
       within("#flash-editcomplete") do
         expect(page).to have_content("Test name edited!")
       end
-      expect(current_path).to eq("/admin/garmentegories/test_name/edit")
+      expect(current_path).to eq("/admin/categories/test_name/edit")
     end
 
     xit "changes all different types of names" do

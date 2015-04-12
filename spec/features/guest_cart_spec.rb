@@ -7,7 +7,7 @@ describe "guest can use a cart" do
     click_link_or_button("add to cart")
     expect(current_path).to eq(cart_path)
     click_link_or_button("continue")
-    expect(current_path).to eq("/garmentegories")
+    expect(current_path).to eq("/categories")
   end
 
   it "displays multiple garments" do
