@@ -52,7 +52,7 @@ class Seed
 
   def generate_categories
     5.times do
-      category = FactoryGirl.create(:breed, name: Faker::Commerce.department)
+      category = FactoryGirl.create(:category, name: Faker::Commerce.department)
       puts "Created Category: #{category.name}"
     end
   end
@@ -60,7 +60,7 @@ class Seed
   def generate_garments
     seller_count = Seller.count
     100.times do
-      category = Breed.order("RANDOM()").limit(1).first
+      category = Category.order("RANDOM()").limit(1).first
       garment = category.garments.create(name: Faker::Commerce.product_name, price: Faker::Commerce.price.to_i * 100, image_path: image, description: "x", seller_id: rand(1..seller_count))
       puts "Created Item: #{garment.name}"
     end

@@ -24,7 +24,7 @@
             <li><%= link_to "home", root_path %></li>
             <li><%= link_to "stores", stores_path %></li>
             <li><%= link_to "cart", cart_path %></li>
-            <li><%= link_to "categories", breeds_path %></li>
+            <li><%= link_to "categories", categories_path %></li>
             <li><%= link_to "orders", orders_path %></li>
             <% if current_user && current_user.admin? %>
               <%= render "layouts/admin_nav" %>

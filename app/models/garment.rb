@@ -2,8 +2,8 @@ class Garment < ActiveRecord::Base
   include ActiveModel::Validations
   include AttributeUpdater
   include Monify
-  has_many :garment_breeds
-  has_many :breeds, through: :garment_breeds, inverse_of: :garments
+  has_many :garment_categories
+  has_many :categories, through: :garment_categories, inverse_of: :garments
   has_many :order_garments, inverse_of: :garment
   has_many :orders, through: :order_garments, inverse_of: :garments
   has_many :users, through: :orders, inverse_of: :garments

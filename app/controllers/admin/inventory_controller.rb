@@ -1,7 +1,7 @@
 class Admin::InventoryController < ApplicationController
-  before_action :set_garments, :set_breeds
+  before_action :set_garments, :set_categorys
   def index
-    authorize! :edit, Breed
+    authorize! :edit, Category
   end
 
   private
@@ -10,8 +10,8 @@ class Admin::InventoryController < ApplicationController
     @garments = Garment.all
   end
 
-  def set_breeds
-    @breeds = Breed.all
+  def set_categorys
+    @categories = Category.all
   end
 
 end

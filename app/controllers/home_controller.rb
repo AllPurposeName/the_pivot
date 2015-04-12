@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
   def index
     set_top_sellers
-    set_breeds
+    set_categories
     set_top_garments
   end
 
@@ -18,8 +18,8 @@ class HomeController < ApplicationController
 
   private
 
-  def set_breeds
-    @breeds = Breed.all
+  def set_categories
+    @categories = Category.all
   end
 
   def set_top_garments

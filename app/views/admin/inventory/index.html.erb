@@ -8,10 +8,10 @@
     <br>
   <% end %>
 
-  <h2>ALL BREEDS</h2>
+  <h2>ALL CATEGORIES</h2>
 
-  <% @breeds.each do |breed| %>
-    <%= link_to "#{breed.name.downcase}", edit_admin_breed_path(breed)%>
+  <% @categories.each do |category| %>
+    <%= link_to "#{category.name.downcase}", edit_admin_breed_path(breed)%>
     <br>
   <% end %>
 </div>

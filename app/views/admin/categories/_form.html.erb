@@ -1,16 +1,16 @@
-<%= form_for([:admin, @breed]) do |f| %>
+<%= form_for([:admin, @category]) do |f| %>
   <%= f.label :name, "edit name" %>
   <%= f.text_field :name %>
 
-  <%= "Description of #{@breed.name.capitalize}s:" %>
+  <%= "Description of #{@category.name.capitalize}s:" %>
   <%= f.label :description, "edit description" %>
   <%= f.text_field :description %>
 
-  <%= "Image_path of #{@breed.name.capitalize}s:" %>
+  <%= "Image_path of #{@category.name.capitalize}s:" %>
   <%= f.label :image_path, "edit image_path" %>
   <%= f.text_field :image_path %>
 
-  <%= "Retired status of #{@breed.name.capitalize}s:" %>
+  <%= "Retired status of #{@category.name.capitalize}s:" %>
   <%= f.label :retired, "edit retired" %>
   <%= f.text_field :retired %>
 
