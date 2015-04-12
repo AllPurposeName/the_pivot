@@ -1,12 +1,12 @@
-class Cat < ActiveRecord::Base
+class Garment < ActiveRecord::Base
   include ActiveModel::Validations
   include AttributeUpdater
   include Monify
-  has_many :cat_breeds
-  has_many :breeds, through: :cat_breeds, inverse_of: :cats
-  has_many :order_cats, inverse_of: :cat
-  has_many :orders, through: :order_cats, inverse_of: :cats
-  has_many :users, through: :orders, inverse_of: :cats
+  has_many :garment_categories
+  has_many :categories, through: :garment_categories, inverse_of: :garments
+  has_many :order_garments, inverse_of: :garment
+  has_many :orders, through: :order_garments, inverse_of: :garments
+  has_many :users, through: :orders, inverse_of: :garments
   belongs_to :seller
 
   validates :name, length: { minimum: 2, maximum: 32 }
@@ -23,7 +23,7 @@ class Cat < ActiveRecord::Base
   end
 
   def quantity(order_id)
-    Order.find(order_id).order_cats.find_by(cat_id: id).quantity
+    Order.find(order_id).order_garments.find_by(garment_id: id).quantity
   end
 
   def change_retired

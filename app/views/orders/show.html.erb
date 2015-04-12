@@ -11,13 +11,13 @@
       <th>Total Price</th>
     </tr>
 
-    <% @order.cats.each do |cat| %>
+    <% @order.garments.each do |garment| %>
       <tr>
-        <td><%= link_to "#{cat.name}", seller_cat_path(slug: cat.slug, id: cat.id) %></td>
-        <td><%= cat.description %></td>
-        <td><%= cat.monify %></td>
-        <td><%= cat.quantity(@order.id) %></td>
-        <td><%= cat.monify(cat.price * cat.quantity(@order.id)) %></td>
+        <td><%= link_to "#{garment.name}", seller_garment_path(slug: garment.slug, id: garment.id) %></td>
+        <td><%= garment.description %></td>
+        <td><%= garment.monify %></td>
+        <td><%= garment.quantity(@order.id) %></td>
+        <td><%= garment.monify(garment.price * garment.quantity(@order.id)) %></td>
       </tr>
     <% end %>
     <tr>

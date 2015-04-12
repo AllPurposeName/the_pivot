@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150407200958) do
+ActiveRecord::Schema.define(version: 20150412062541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "breeds", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.text     "name"
     t.text     "image_path"
     t.boolean  "retired"
@@ -25,14 +25,14 @@ ActiveRecord::Schema.define(version: 20150407200958) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "cat_breeds", force: :cascade do |t|
-    t.integer  "cat_id"
-    t.integer  "breed_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "garment_categories", force: :cascade do |t|
+    t.integer  "garment_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  create_table "cats", force: :cascade do |t|
+  create_table "garments", force: :cascade do |t|
     t.text     "name"
     t.integer  "price"
     t.boolean  "retired",     default: false
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20150407200958) do
     t.integer  "seller_id"
   end
 
-  create_table "order_cats", force: :cascade do |t|
-    t.integer  "cat_id"
+  create_table "order_garments", force: :cascade do |t|
+    t.integer  "garment_id"
     t.integer  "order_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false

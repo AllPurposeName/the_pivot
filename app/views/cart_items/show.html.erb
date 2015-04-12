@@ -10,29 +10,29 @@
     <th>Total Price</th>
   </tr>
 
-  <% @cart.cats_quantity.each do |cat, quantity| %>
+  <% @cart.garments_quantity.each do |garment, quantity| %>
     <tr>
-      <td><%= cat.name %></td>
-      <td><%= cat.description %></td>
-      <td><%= cat.monify %></td>
-      <td><%= link_to "", decrement_cart_items_path(id: cat.id), method: :put, class: "glyphicon glyphicon-minus", id: "minus-#{cat.id}" %></td>
+      <td><%= garment.name %></td>
+      <td><%= garment.description %></td>
+      <td><%= garment.monify %></td>
+      <td><%= link_to "", decrement_cart_items_path(id: garment.id), method: :put, class: "glyphicon glyphicon-minus", id: "minus-#{garment.id}" %></td>
       <td><%= quantity %></td>
-      <td><%= link_to "", increment_cart_items_path(id: cat.id), method: :patch, class: "glyphicon glyphicon-plus", id: "plus-#{cat.id}" %></td>
+      <td><%= link_to "", increment_cart_items_path(id: garment.id), method: :patch, class: "glyphicon glyphicon-plus", id: "plus-#{garment.id}" %></td>
       <td>
-        <%= @cart.subtotal(cat)%>
+        <%= @cart.subtotal(garment)%>
       </td>
-      <td><%= link_to "", cart_items_path(id: cat.id), method: :delete, class: "glyphicon glyphicon-remove", id: "remove-#{cat.id}"%></td>
+      <td><%= link_to "", cart_items_path(id: garment.id), method: :delete, class: "glyphicon glyphicon-remove", id: "remove-#{garment.id}"%></td>
     </tr>
   <% end %>
 </table>
 <h3 id="order-title"> Order subtotal: <%= @cart.total_monify %></h3>
 
-<% unless @cart.cats_quantity.empty? %>
+<% unless @cart.garments_quantity.empty? %>
   <% if current_user %>
-    <%= button_to "checkout", order_cats_path, id: "order-title", class: "btn btn-success"%>
+    <%= button_to "checkout", order_garments_path, id: "order-title", class: "btn btn-success"%>
   <% else %>
     <a href="#" class="btn btn-success" id="order-title" data-toggle="modal" data-target="#loginModal">checkout</a>
   <% end %>
 <% end %>
 
-<%= button_to "continue shopping", breeds_path, class: "btn btn-danger", method: :get, id: "order-title" %>
+<%= button_to "continue shopping", categories_path, class: "btn btn-danger", method: :get, id: "order-title" %>

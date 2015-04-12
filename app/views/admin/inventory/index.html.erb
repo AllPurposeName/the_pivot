@@ -1,17 +1,17 @@
 <div class="list">
   <h1>CLICK TO EDIT:</h1>
 
-  <h2>ALL CATS</h2>
+  <h2>ALL GARMENTS</h2>
 
-  <% @cats.each do |cat| %>
-    <%= link_to "#{cat.name.downcase}", edit_admin_cat_path(cat) %>
+  <% @garments.each do |garment| %>
+    <%= link_to "#{garment.name.downcase}", edit_admin_garment_path(garment) %>
     <br>
   <% end %>
 
-  <h2>ALL BREEDS</h2>
+  <h2>ALL CATEGORIES</h2>
 
-  <% @breeds.each do |breed| %>
-    <%= link_to "#{breed.name.downcase}", edit_admin_breed_path(breed)%>
+  <% @categories.each do |category| %>
+    <%= link_to "#{category.name.downcase}", edit_admin_breed_path(breed)%>
     <br>
   <% end %>
 </div>

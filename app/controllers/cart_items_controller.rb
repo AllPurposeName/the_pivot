@@ -1,7 +1,7 @@
 class CartItemsController < ApplicationController
 
   def show
-    if @cart.cats_quantity
+    if @cart.garments_quantity
       session[:cart_data] = @cart.contents
       render :show
     else
@@ -13,7 +13,7 @@ class CartItemsController < ApplicationController
   def create
     @cart.add_to_cart(params[:id])
     session[:cart_data] = @cart.contents
-    redirect_to cart_path, alert: "cat added to cart"
+    redirect_to cart_path, alert: "garment added to cart"
   end
 
   def delete

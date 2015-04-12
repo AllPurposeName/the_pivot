@@ -1,32 +1,32 @@
 class Cart
   include Monify
-  attr_reader :contents, :cats_quantity, :price
+  attr_reader :contents, :garments_quantity, :price
 
   def initialize(cart_data)
     @contents = cart_data || Hash.new(0)
     update
   end
 
-  def add_to_cart(cat)
-    @contents[cat.to_s] ||= 0
-    @contents[cat.to_s] += 1
+  def add_to_cart(garment)
+    @contents[garment.to_s] ||= 0
+    @contents[garment.to_s] += 1
   end
 
-  def remove_from_cart(cat)
-    @contents.delete(cat)
+  def remove_from_cart(garment)
+    @contents.delete(garment)
   end
 
-  def subtract_from_cart(cat)
-    @contents[cat.to_s] ||= 1
-    @contents[cat.to_s] -= 1
-    if @contents[cat.to_s] == 0
-      @contents.delete(cat)
+  def subtract_from_cart(garment)
+    @contents[garment.to_s] ||= 1
+    @contents[garment.to_s] -= 1
+    if @contents[garment.to_s] == 0
+      @contents.delete(garment)
     end
   end
 
-  def create_order_cats(order)
-    @contents.each do |cat_id, quantity|
-      order.order_cats.create(cat_id: cat_id,
+  def create_order_garments(order)
+    @contents.each do |garment_id, quantity|
+      order.order_garments.create(garment_id: garment_id,
                               quantity: quantity)
     end
   end
@@ -35,15 +35,15 @@ class Cart
     monify
   end
 
-  def subtotal(cat)
-    monify(@contents[cat.id.to_s] * Cat.find(cat).price)
+  def subtotal(garment)
+    monify(@contents[garment.id.to_s] * Garment.find(garment).price)
   end
 
   private
 
   def update
     if no_content_empty?
-      set_cats_quantity
+      set_garments_quantity
       sum_price
     end
   end
@@ -54,14 +54,14 @@ class Cart
     end
   end
 
-  def set_cats_quantity
-    @cats_quantity = @contents.each_with_object(Hash.new(0)) do |(cat_id, quantity), hash|
-    hash[Cat.find(cat_id)] = quantity
+  def set_garments_quantity
+    @garments_quantity = @contents.each_with_object(Hash.new(0)) do |(garment_id, quantity), hash|
+    hash[Garment.find(garment_id)] = quantity
     end
   end
 
   def sum_price
-    @price = cats_quantity.inject(0) do |sum, (item, quantity)|
+    @price = garments_quantity.inject(0) do |sum, (item, quantity)|
       sum += (item.price * quantity)
       sum
     end

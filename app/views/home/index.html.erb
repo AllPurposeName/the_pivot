@@ -9,8 +9,8 @@
 
 <h2 class="text-center">Categories</h2>
 <div class="text-center">
-  <% @breeds.each do |breed| %>
-    <%= link_to "#{breed.name}", "breeds/#{breed.name.downcase}"%>&nbsp;&nbsp;
+  <% @categories.each do |category| %>
+    <%= link_to "#{category.name}", "categories/#{breed.name.downcase}"%>&nbsp;&nbsp;
   <% end %>
 </div>
 <h2 class="text-center">Featured Stores</h2>
@@ -29,9 +29,9 @@
 
 <h2 class="text-center">Top Sellers</h2>
 <div class="masonry-container center-block" id="garment-container">
-  <% @cats.each do |cat| %>
+  <% @garments.each do |garment| %>
     <div class="item">
-      <%= link_to image_tag(cat.image_path), seller_cat_path(slug: cat.slug, id: cat.id) %>
+      <%= link_to image_tag(garment.image_path), seller_garment_path(slug: garment.slug, id: garment.id) %>
     </div>
     <br>
     <br>

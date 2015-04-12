@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   include ActiveModel::Validations
   has_secure_password
   has_many :orders
-  has_many :order_cats, through: :orders
-  has_many :cats, through: :orders
+  has_many :order_garments, through: :orders
+  has_many :garments, through: :orders
   belongs_to :userable, polymorphic: true
 
   enum role: %w(default admin)

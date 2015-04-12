@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#logout"
   resources :users, only: [:new, :create]
 
-  resources :breeds, only: [:index]
-  get '/breeds/:name', to: "breeds#show", as: "breed"
-  resources :order_cats, only: [:create]
+  resources :categorys, only: [:index]
+  get '/categorys/:name', to: "breeds#show", as: "breed"
+  resources :order_garments, only: [:create]
   resources :orders, only: [:index, :show]
   resources :cart_items, only: [:create, :show]
   get '/cart_items', to: "cart_items#show", as: "cart"
@@ -20,16 +20,16 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :inventory, only: [:index]
-    resources :breeds, except: [:index]
-    resources :cats, except: [:index]
-    put '/cats/js/:id', to: 'cats#retired_update'
+    resources :categorys, except: [:index]
+    resources :garments, except: [:index]
+    put '/garments/js/:id', to: 'garments#retired_update'
     resources :orders, only: [:index, :update]
   end
 
   namespace :sellers, as: :seller, path: "/:slug" do
-    get '/', to: "cats#index"
-    resources :cats
-    resources :breeds
+    get '/', to: "garments#index"
+    resources :garments
+    resources :categorys
     resources :orders
     get '/dashboard', to: "dashboard#show"
   end

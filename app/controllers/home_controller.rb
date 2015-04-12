@@ -4,12 +4,12 @@ class HomeController < ApplicationController
 
   def index
     set_top_sellers
-    set_breeds
-    set_top_cats
+    set_categories
+    set_top_garments
   end
 
   def items
-    set_random_cats
+    set_random_garments
   end
 
   def stores
@@ -18,20 +18,20 @@ class HomeController < ApplicationController
 
   private
 
-  def set_breeds
-    @breeds = Breed.all
+  def set_categories
+    @categories = Category.all
   end
 
-  def set_top_cats
-    @cats = Cat.top_20
+  def set_top_garments
+    @garments = Garment.top_20
   end
 
   def set_top_sellers
    @sellers = Seller.top_3
   end
 
-  def set_random_cats
-    @cats = Cat.order("RANDOM()")
+  def set_random_garments
+    @garments = Garment.order("RANDOM()")
   end
 
   def set_random_sellers

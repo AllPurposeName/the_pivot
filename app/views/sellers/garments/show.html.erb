@@ -1,0 +1,16 @@
+<div id="garment-single">
+
+  <div class="image-garment-single">
+    <%= image_tag @garment.image_path %>
+  </div>
+
+  <h1> <%= @garment.name.capitalize %></h1>
+  <h1> <%= @garment.monify %></h1>
+
+  <h2><%= @garment.description.capitalize %></h2>
+
+  <h3 id="status"> <%= @garment.availability %></h3>
+  <% if @garment.retired? == false %>
+    <%= button_to "add to cart", cart_items_path(id: @garment.id), class: "btn btn-success" %>
+  <% end %>
+</div>

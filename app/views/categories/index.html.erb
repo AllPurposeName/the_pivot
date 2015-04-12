@@ -1,0 +1,8 @@
+<div class="list">
+  <h2>CATEGORIES</h2>
+
+  <% @categories.each do |category| %>
+    <%= link_to "#{category.name}", category_path(name: breed.name) %>
+    <br>
+  <% end %>
+</div>

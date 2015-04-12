@@ -15,11 +15,11 @@ class SessionsController < ApplicationController
     if !user
       return try_login_again
     end
-    if user.admin? && user.authenticate(params[:session][:password])
+    if user.admin? && user.authentigarmente(params[:session][:password])
       flash[:welcomeadmin] = "Welcome, #{user.username.capitalize}!"
       redirect_to '/admin/inventory'
       session[:user_id] = user.id
-    elsif user && user.authenticate(params[:session][:password])
+    elsif user && user.authentigarmente(params[:session][:password])
       session[:user_id] = user.id
       redirect_to :back
     else
