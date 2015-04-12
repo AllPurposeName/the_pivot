@@ -10,13 +10,13 @@
       <th>Total Price</th>
     </tr>
 
-    <% order.cats.each do |cat| %>
+    <% order.garments.each do |garment| %>
       <tr>
-        <td><%= cat.name %></td>
-        <td><%= cat.description %></td>
-        <td><%= cat.monify %></td>
-        <td><%= cat.quantity(order.id) %></td>
-        <td><%= cat.monify((cat.quantity(order.id) * cat.price)) %></td>
+        <td><%= garment.name %></td>
+        <td><%= garment.description %></td>
+        <td><%= garment.monify %></td>
+        <td><%= garment.quantity(order.id) %></td>
+        <td><%= garment.monify((garment.quantity(order.id) * garment.price)) %></td>
       </tr>
     <% end %>
     <tr>

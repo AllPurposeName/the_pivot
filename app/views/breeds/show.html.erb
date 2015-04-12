@@ -9,11 +9,11 @@
   <h3> <%= @breed.availability %> </h3>
 
   <div class="masonry-container center-block" id="garment-container">
-    <% @cats.each do |cat| %>
+    <% @garments.each do |garment| %>
       <div class="item">
-        <%= link_to image_tag(cat.image_path), seller_cat_path(id: cat.id, slug: cat.slug) %>
+        <%= link_to image_tag(garment.image_path), seller_garment_path(id: garment.id, slug: garment.slug) %>
         <figcaption>
-        <%= link_to cat.name, seller_cat_path(id: cat.id, slug: cat.slug) %>
+        <%= link_to garment.name, seller_garment_path(id: garment.id, slug: garment.slug) %>
         </figcaption>
       </div>
     <% end %>

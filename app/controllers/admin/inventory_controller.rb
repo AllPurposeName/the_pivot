@@ -1,13 +1,13 @@
 class Admin::InventoryController < ApplicationController
-  before_action :set_cats, :set_breeds
+  before_action :set_garments, :set_breeds
   def index
     authorize! :edit, Breed
   end
 
   private
 
-  def set_cats
-    @cats = Cat.all
+  def set_garments
+    @garments = Garment.all
   end
 
   def set_breeds

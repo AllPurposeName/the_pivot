@@ -2,8 +2,8 @@ class Breed < ActiveRecord::Base
   include AttributeUpdater
   before_save :set_image
 
-  has_many :cat_breeds, inverse_of: :breed
-  has_many :cats, through: :cat_breeds, inverse_of: :breeds
+  has_many :garment_breeds, inverse_of: :breed
+  has_many :garments, through: :garment_breeds, inverse_of: :breeds
   validates :name, length: { minimum: 2, maximum: 32 }, uniqueness: true
   validates :description, presence: true
 
