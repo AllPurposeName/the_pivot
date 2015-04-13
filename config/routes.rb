@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#logout"
   resources :users, only: [:new, :create]
 
-  resources :categorys, only: [:index]
-  get '/categorys/:name', to: "breeds#show", as: "breed"
+  resources :categories, only: [:index]
+  get '/categories/:name', to: "categories#show", as: "category"
   resources :order_garments, only: [:create]
   resources :orders, only: [:index, :show]
   resources :cart_items, only: [:create, :show]
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   namespace :sellers, as: :seller, path: "/:slug" do
     get '/', to: "garments#index"
     resources :garments
-    resources :categorys
+    resources :categories
     resources :orders
     get '/dashboard', to: "dashboard#show"
   end

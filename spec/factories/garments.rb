@@ -1,7 +1,7 @@
 FactoryGirl.define do
 
-  factory :cat do
-    sequence(:name) { |n| "Cat #{n}"}
+  factory :garment do
+    sequence(:name) { |n| "Garment #{n}"}
     price 3000
     retired false
     image_path "MyText"
