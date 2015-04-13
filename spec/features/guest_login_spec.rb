@@ -20,11 +20,11 @@ describe "Guest on the login page", type: :feature do
     end
 
     it "does not log in with invalid data" do
-      guests_identity = create(:user, username: "Felix", password: "thecat")
+      guests_identity = create(:user, username: "Felix", password: "thegarment")
 
       visit "/login"
       fill_in "session[username]", with: "Felix"
-      fill_in "session[password]", with: "thecatinthehat"
+      fill_in "session[password]", with: "thegarmentinthehat"
       click_link_or_button("log in")
 
       within("#flash-tryagain") do

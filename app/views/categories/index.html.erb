@@ -2,7 +2,7 @@
   <h2>CATEGORIES</h2>
 
   <% @categories.each do |category| %>
-    <%= link_to "#{category.name}", category_path(name: breed.name) %>
+    <%= link_to "#{category.name}", category_path(name: category.name) %>
     <br>
   <% end %>
 </div>
