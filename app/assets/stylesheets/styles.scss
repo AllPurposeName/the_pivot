@@ -17,6 +17,7 @@ body {
   background-color: $sand;
 }
 
+<<<<<<< HEAD
 
 h1 {
   font-weight: 900;
@@ -32,6 +33,22 @@ h4 {
 }
 h5 {
   font-weight: 900;
+=======
+.shrink {
+  margin-top: -10px;
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  transition: 3s;
+}
+
+.shrink {
+  width: 50px;
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  transition: 3s;
+>>>>>>> 22a08684979cfa3b49f8a4e4a49964111c0e4b95
 }
 
 form {
@@ -103,9 +120,14 @@ form {
   text-align: center;
 }
 
-h1 {
+.btn-long {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+h1,h2,h3 {
   font-size: 1.5em;
-  text-align: center;
 }
 
 #logo-home > h1 {
@@ -139,8 +161,8 @@ a:hover {
   text-align: center;
 }
 
-.image-cat-single img {
-  max-width: 600px;
+.image-garment-single img {
+  max-height: 450px;
   height: auto;
   margin: auto;
   display: block;
@@ -149,14 +171,14 @@ a:hover {
 }
 
 .item img {
-	width: 310px;
-	height: auto;
+  width: 310px;
+  height: auto;
 }
 
 .item img:hover {
-	width: 310px;
+  width: 310px;
   opacity: 0.75;
-	height: auto;
+  height: auto;
 }
 
 
@@ -170,19 +192,19 @@ a:hover {
 }
 
 .item {
-	display: block;
-	float: left;
-	width: 310px;
+  display: block;
+  float: left;
+  width: 310px;
   margin-top: 8px;
-	-webkit-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
-	-moz-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
-	-ms-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
-	-o-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
-	transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+  -webkit-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+  -moz-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+  -ms-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+  -o-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+  transition: left .4s ease-in-out, top .4s ease-in-out .4s;
 }
 
 .masonry-container {
-	display: inline;
+  display: inline;
 }
 
 #store-nav {
@@ -191,7 +213,7 @@ a:hover {
 }
 
 .inline {
-	display: inline;
+  display: inline;
 }
 
 #seller-profile img {
