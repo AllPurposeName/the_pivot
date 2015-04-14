@@ -15,6 +15,7 @@ body {
   background-image: url("texture_background4.jpg");
   background-repeat: repeat-y;
   background-color: $sand;
+	/*background-image: url("background-image.jpg");*/
 }
 
 <<<<<<< HEAD
@@ -171,16 +172,23 @@ a:hover {
 }
 
 .item img {
-  width: 310px;
+  width: 300px;
   height: auto;
 }
 
 .item img:hover {
-  width: 310px;
   opacity: 0.75;
-  height: auto;
 }
 
+.item:hover {
+  box-shadow: 0px 0px 0px #888888;
+  margin-left: 20px;
+  margin-top: 20px;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  transition: 1s;
+}
 
 .item a {
   color: $sand;
@@ -192,10 +200,12 @@ a:hover {
 }
 
 .item {
+  box-shadow: 10px 10px 5px #888888;
   display: block;
   float: left;
-  width: 310px;
-  margin-top: 8px;
+  width: 300px;
+  /*margin-right: 20px;*/
+  margin-top: 20px;
   -webkit-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
   -moz-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
   -ms-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
