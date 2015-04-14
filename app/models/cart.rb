@@ -36,7 +36,12 @@ class Cart
   end
 
   def subtotal(garment)
-    monify(@contents[garment.id.to_s] * Garment.find(garment).price)
+    monify(@contents[garment.id.to_s] * garment.price)
+  end
+
+  def mail_purchase(recipient)
+    mail_to_user(recipient)
+    mail_to_sellers(recipient)
   end
 
   private
@@ -65,5 +70,21 @@ class Cart
       sum += (item.price * quantity)
       sum
     end
+  end
+
+  def mail_to_user(recipient)
+    Notifier.purchase_notification(recipient).deliver_now
+  end
+
+  def mail_to_sellers(recipient)
+    sellers.each do |seller|
+      Notifier.item_sold_notification(seller, recipient).deliver_now
+    end
+  end
+
+  def sellers
+    @contents.keys.map do |garment|
+      Garment.find(garment).seller
+    end.uniq
   end
 end
