@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   root to: "home#index"
   get '/items', to: "home#items"
   get '/stores', to: "home#stores"
-
+  resources :sellers, as: "owners"
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
   get "/logout", to: "sessions#logout"
-  resources :users, only: [:new, :create]
+  resources :users, only: [:show, :new, :create]
 
   resources :categories, only: [:index]
   get '/categories/:name', to: "categories#show", as: "category"

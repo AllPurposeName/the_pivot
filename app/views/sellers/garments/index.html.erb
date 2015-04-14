@@ -23,11 +23,13 @@
     </div>
   </div>
   <% @garments.each do |garment| %>
-    <div class="item">
-      <%= link_to image_tag(garment.image_path), seller_garment_path(id: garment.id) %>
-      <figcaption>
-        <%= link_to garment.name, seller_garment_path(id: garment.id) %>
-      </figcaption>
-    </div>
+    <% cache(garment) do %>
+      <div class="item">
+        <%= link_to image_tag(garment.image_path), seller_garment_path(id: garment.id) %>
+        <figcaption>
+          <%= link_to garment.name, seller_garment_path(id: garment.id) %>
+        </figcaption>
+      </div>
+    <% end %>
   <% end %>
 </div>

@@ -36,7 +36,7 @@ class Cart
   end
 
   def subtotal(garment)
-    monify(@contents[garment.id.to_s] * Garment.find(garment).price)
+    monify(@contents[garment.id.to_s] * garment.price)
   end
 
   private

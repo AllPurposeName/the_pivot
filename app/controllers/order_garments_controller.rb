@@ -2,7 +2,7 @@ class OrderGarmentsController < ApplicationController
   include ResetCart
   def create
     if current_user
-      if @cart.garments_and_quantity
+      if @cart.garments_quantity
         order = current_user.orders.create
         @cart.create_order_garments(order)
         reset_cart
