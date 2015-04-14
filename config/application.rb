@@ -20,6 +20,7 @@ config.active_record.raise_in_transactional_callbacks = true
 config.active_job.queue_adapter = :sidekiq
 config.action_mailer.delivery_method = :smtp
 
+config.action_mailer.default_options = {from: 'noreply.handmeups@gmail.com'}
 config.action_mailer.smtp_settings = {
   address:              'smtp.mandrillapp.com',
   port:                 '587',
