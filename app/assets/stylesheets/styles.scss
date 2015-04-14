@@ -84,9 +84,14 @@ form {
   text-align: center;
 }
 
-h1 {
+.btn-long {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+h1,h2,h3 {
   font-size: 1.5em;
-  text-align: center;
 }
 
 #logo-home > h1 {
@@ -120,8 +125,8 @@ a:hover {
   text-align: center;
 }
 
-.image-cat-single img {
-  max-width: 600px;
+.image-garment-single img {
+  max-height: 450px;
   height: auto;
   margin: auto;
   display: block;
