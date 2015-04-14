@@ -26,15 +26,11 @@
             <li><%= link_to "cart", cart_path %></li>
             <li><%= link_to "categories", categories_path %></li>
             <li><%= link_to "orders", orders_path %></li>
-            <% if current_user.userable %>
-              <li><%= link_to "view my store", owner_path %></li>
-            <% else %>
-              <li><%= link_to "create a store", new_owner_path %></li>
-            <% end %>
             <% if current_user && current_user.admin? %>
               <%= render "layouts/admin_nav" %>
             <% end %>
             <% if !current_user %>
+              <li><%= link_to "create a store", new_owner_path %></li>
               <li>
               <a href="#" data-toggle="modal" data-target="#signupModal">
                 sign up
