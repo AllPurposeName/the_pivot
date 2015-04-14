@@ -5,6 +5,10 @@ class SellersController < ApplicationController
   end
 
   def new
+    unless current_user
+      flash[:success] = "Please sign or log in to continue."
+      redirect_to :back
+    end
     @seller = Seller.new
   end
 
