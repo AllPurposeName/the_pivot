@@ -4,14 +4,14 @@
   <h2>ALL GARMENTS</h2>
 
   <% @garments.each do |garment| %>
-    <%= link_to "#{garment.name.downcase}", edit_admin_garment_path(garment) %>
+    <%= link_to garment.name.downcase, edit_admin_garment_path(garment) %>
     <br>
   <% end %>
 
   <h2>ALL CATEGORIES</h2>
 
   <% @categories.each do |category| %>
-    <%= link_to "#{category.name.downcase}", edit_admin_breed_path(breed)%>
+    <%= link_to "#{category.name.downcase}", edit_admin_category_path(category)%>
     <br>
   <% end %>
 </div>

@@ -1,0 +1,23 @@
+<%= form_for([:seller, @garment], url: seller_garment_path(slug: current_user.slug, id: @garment.id), method: :put) do |f| %>
+  <%= f.label :name, "edit name" %>
+  <%= f.text_field :name %>
+
+  <%= "Description for #{@garment.name.capitalize}:" %>
+  <%= f.label :description, "edit description" %>
+  <%= f.text_field :description %>
+
+  <%= "Price for #{@garment.name.capitalize}:" %>
+  <%= f.label :price, "edit price" %>
+  <%= f.text_field :price %>
+
+  <%= "Image_path for #{@garment.name.capitalize}:" %>
+  <%= f.label :image_path, "edit image_path" %>
+  <%= f.text_field :image_path %>
+
+  <%= "Retired status for #{@garment.name.capitalize}:" %>
+  <%= f.label :retired, "edit retired" %>
+  <div data-garment="<%=@garment.id %>">
+  <%= select("garment_", "retire_updater", [@garment.retired?, true, false].uniq, {include_blank: false}) %>
+  </div>
+  <%= f.submit "Submit" %>
+<% end %>

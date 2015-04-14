@@ -1,0 +1,5 @@
+<% unless current_user.userable_id %>
+  <%= link_to "Create a store", new_owner_path, class: "btn btn-danger" %>
+<% else %>
+  <%= link_to current_user.store_name, owners_path %>
+<% end %>

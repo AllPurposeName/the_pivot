@@ -11,4 +11,12 @@ class User < ActiveRecord::Base
                     uniqueness: true
   validates :full_name, presence: true
   validates :username, length: { minimum: 2, maximum: 32 }
+
+  def store_name
+    userable.store_name
+  end
+
+  def slug
+    userable.slug
+  end
 end
