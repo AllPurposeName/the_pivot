@@ -61,11 +61,6 @@
           <%= content_tag :div, msg, :id => "flash-#{name}", class: "text-center" %>
         <% end %>
       </div>
-      <% if flash.count > 1 %>
-        <div class="alert-link alert alert-success text-center">
-          <%= link_to "Click here to try signing in again!", "#", "data-toggle"=>"modal", "data-target"=>"#loginModal"%>
-        </div>
-      <% end %>
       <div class='yield-style'>
         <%= yield %>
       </div>
