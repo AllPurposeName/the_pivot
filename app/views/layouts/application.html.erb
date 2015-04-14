@@ -26,8 +26,8 @@
             <li><%= link_to "cart", cart_path %></li>
             <li><%= link_to "categories", categories_path %></li>
             <li><%= link_to "orders", orders_path %></li>
-            <% if current_user.userable %>
-              <li><%= link_to "view my store", owner_path %></li>
+            <% if current_user && current_user.userable %>
+              <li><%= link_to "view my store", owner_path(id: current_user.id) %></li>
             <% else %>
               <li><%= link_to "create a store", new_owner_path %></li>
             <% end %>
@@ -62,11 +62,6 @@
           <%= content_tag :div, msg, :id => "flash-#{name}", class: "text-center" %>
         <% end %>
       </div>
-      <% if flash.count > 1 %>
-        <div class="alert-link alert alert-success text-center">
-          <%= link_to "Click here to try signing in again!", "#", "data-toggle"=>"modal", "data-target"=>"#loginModal"%>
-        </div>
-      <% end %>
       <div class='yield-style'>
         <%= yield %>
       </div>

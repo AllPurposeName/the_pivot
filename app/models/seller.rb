@@ -1,6 +1,7 @@
 class Seller < ActiveRecord::Base
   has_one :user, as: :userable
   has_many :garments
+  validates :store_name, presence: true
   validates :slug, uniqueness: true
   before_save :generate_slug
 
