@@ -26,24 +26,23 @@
             <li><%= link_to "cart", cart_path %></li>
             <li><%= link_to "categories", categories_path %></li>
             <li><%= link_to "orders", orders_path %></li>
-            <% if current_user && current_user.userable %>
-              <li><%= link_to "view my store", owner_path(id: current_user.id) %></li>
-            <% else %>
-              <li><%= link_to "create a store", new_owner_path %></li>
-            <% end %>
             <% if current_user && current_user.admin? %>
               <%= render "layouts/admin_nav" %>
             <% end %>
-            <% if !current_user %>
+            <% if !current_user || !current_user.userable%>
+              <li><%= link_to "create a store", new_owner_path %></li>
+            <% end %>
+            <% unless current_user %>
               <li>
-              <a href="#" data-toggle="modal" data-target="#signupModal">
-                sign up
-              </a>
+                <a href="#" data-toggle="modal" data-target="#signupModal">
+                  sign up
+                </a>
               </li>
               <li>
-              <a href="#" data-toggle="modal" data-target="#loginModal">
-                login
-              </a>
+
+                <a href="#" data-toggle="modal" data-target="#loginModal">
+                  login
+                </a>
               </li>
             <% else %>
               <li> <%= link_to current_user.username, current_user %></li>
