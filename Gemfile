@@ -34,7 +34,7 @@ gem 'faker'
 gem 'masonry-rails'
 gem 'factory_girl_rails', "~> 4.0"
 gem 'unicorn'
-
+gem 'figaro'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -5,7 +5,9 @@ class OrderGarmentsController < ApplicationController
       if @cart.garments_quantity
         order = current_user.orders.create
         @cart.create_order_garments(order)
+        @cart.mail_purchase(current_user)
         reset_cart
+        flash[:email] = "We sent you an email with order details!"
         redirect_to order_path(order.id)
       else
         redirect_to cart_path
