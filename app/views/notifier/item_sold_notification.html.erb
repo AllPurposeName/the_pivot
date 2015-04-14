@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hey, <%= @seller.user.username %>, thanks for your order.</h1>
+    <p>
+    You just made a sale! Feel free to give
+    extra details to the buyer.
+    Here is their email: <%= @user.email %>
+    </p>
+    <p>
+    To login to the site, just follow this link: <%= @url %>.
+    </p>
+    <p>Thanks for your business, have a great day!</p>
+  </body>
+</html>
