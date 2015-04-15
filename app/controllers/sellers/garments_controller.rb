@@ -21,8 +21,7 @@ class Sellers::GarmentsController < ApplicationController
       flash[:newcomplete] = "#{@garment.name.humanize} created!"
       redirect_to owners_path
     else
-      flash[:newfail] = "Please fill every field in with a valid entry"
-      redirect_to new_seller_garment_path(slug: current_user.slug)
+      try_create_garment_again
     end
   end
 
@@ -52,6 +51,14 @@ class Sellers::GarmentsController < ApplicationController
 
   def set_garment
     @garment = Garment.find(params[:id])
+  end
+
+  def try_create_garment_again
+    @garment = Garment.create(garment_params)
+    @garment.errors.messages.each do |field, msg|
+      flash[field] = "#{field.to_s.humanize} #{msg[0]}"
+    end
+    redirect_to new_seller_garment_path(slug: current_user.slug)
   end
 
 end
