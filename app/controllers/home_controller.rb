@@ -27,7 +27,7 @@ class HomeController < ApplicationController
   end
 
   def set_top_sellers
-   @sellers = Seller.top_3
+    @sellers = Seller.last(3)
   end
 
   def set_random_garments

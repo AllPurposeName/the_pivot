@@ -1,10 +1,16 @@
 <div id="seller-profile" class="pull-left inline">
-  <%= image_tag "croctee.jpg" %>
+  <%= image_tag @garments.first.seller.image_path %>
   <figcaption class="caption">
     <h3>
       <%= @garments.first.seller.store_name %>
     </h3>
-    <p>I love crocodiles. A little too much.</p>
+    <p><%= @garments.first.seller.description %></p>
+    &nbsp;
+    &nbsp;
+    <p>Garment delivery time depends on which product is chosen.</p>
+    &nbsp;
+    &nbsp;
+    <p>All garments guaranteed to be made of all natural components.</p>
   </figcaption>
 </div>
 
