@@ -17,7 +17,7 @@
       <td><%= garment.monify %></td>
       <td><%= link_to "", decrement_cart_items_path(id: garment.id), method: :put, class: "glyphicon glyphicon-minus", id: "minus-#{garment.id}" %></td>
       <td><%= quantity %></td>
-      <td><%= link_to "", increment_cart_items_path(id: garment.id), method: :patch, class: "glyphicon glyphicon-plus", id: "plus-#{garment.id}" %></td>
+      <td><%=link_to "", increment_cart_items_path(id: garment.id), method: :patch, class: "glyphicon glyphicon-plus", id: "plus-#{garment.id}" %></td>
       <td>
         <%= @cart.subtotal(garment)%>
       </td>
@@ -25,14 +25,11 @@
     </tr>
   <% end %>
 </table>
-<h3 id="order-title"> Order subtotal: <%= @cart.total_monify %></h3>
 
 <% unless @cart.garments_quantity.empty? %>
   <% if current_user %>
-    <%= button_to "checkout", order_garments_path, id: "order-title", class: "btn btn-success"%>
+    <%= button_to "checkout", order_garments_path, id: "order-title", class: "btn btn-success pull-right"%>
   <% else %>
-    <a href="#" class="btn btn-success" id="order-title" data-toggle="modal" data-target="#loginModal">checkout</a>
+    <a href="#" class="btn btn-success pull-right" id="order-title" data-toggle="modal" data-target="#loginModal">checkout</a>
   <% end %>
 <% end %>
-
-<%= button_to "continue shopping", categories_path, class: "btn btn-danger", method: :get, id: "order-title" %>

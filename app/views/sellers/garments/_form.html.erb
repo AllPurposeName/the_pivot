@@ -1,23 +1,28 @@
 <%= form_for([:seller, @garment], url: seller_garment_path(slug: current_user.slug, id: @garment.id), method: :put) do |f| %>
-  <%= f.label :name, "edit name" %>
-  <%= f.text_field :name %>
 
-  <%= "Description for #{@garment.name.capitalize}:" %>
-  <%= f.label :description, "edit description" %>
-  <%= f.text_field :description %>
+    <div class="form-group">
+      <%= f.label :name, "Name" %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
 
-  <%= "Price for #{@garment.name.capitalize}:" %>
-  <%= f.label :price, "edit price" %>
-  <%= f.text_field :price %>
+    <div class="form-group">
+      <%= f.label :description, "Description" %>
+      <%= f.text_field :description, class: "form-control"  %>
+    </div>
 
-  <%= "Image_path for #{@garment.name.capitalize}:" %>
-  <%= f.label :image_path, "edit image_path" %>
-  <%= f.text_field :image_path %>
+    <div class="form-group">
+      <%= f.label :price, "Price" %>
+      <%= f.text_field :price, class: "form-control"  %>
+    </div>
 
-  <%= "Retired status for #{@garment.name.capitalize}:" %>
-  <%= f.label :retired, "edit retired" %>
-  <div data-garment="<%=@garment.id %>">
-  <%= select("garment_", "retire_updater", [@garment.retired?, true, false].uniq, {include_blank: false}) %>
-  </div>
-  <%= f.submit "Submit" %>
+    <div class="form-group">
+      <%= f.label :image_path, "Image" %>
+      <%= f.text_field :image_path, class: "form-control"  %>
+    </div>
+
+    <div class="form-group">
+  <%= "Status:" %>
+  <%= select("garment_", "retire_updater", ["active", "retired"], {include_blank: false}) %>
+</div>
+  <%= f.submit "Edit", class: "btn btn-danger" %>
 <% end %>
