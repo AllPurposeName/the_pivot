@@ -9,6 +9,8 @@ class Seed
     generate_orders
     generate_default_user
     generate_croc_pot
+    #generate_leatherface
+    #generate_furmanchu
   end
 
   def self.call
@@ -75,7 +77,7 @@ class Seed
   end
 
   def generate_croc_pot
-    seller = FactoryGirl.create(:seller, store_name: "The Croc Pot")
+    seller = FactoryGirl.create(:seller, store_name: "The Croc Pot", image_path: "croctee.jpg", description: "I like crocodiles. A little too much.")
     FactoryGirl.create(:user, username: "croc", email: "croc@croc.com", userable_id: seller.id, userable_type: "Seller")
     seller.garments.create(name: "Midnight Croc", price: 100000, image_path: "crocjacket.jpg", description: "Luxurious in black.")
     seller.garments.create(name: "Croc Wallet", price: 30000, image_path: "crocwallet.jpg", description: "Moneybag for him.")
@@ -87,6 +89,34 @@ class Seed
     seller.garments.create(name: "Croc Boots", price: 10000, image_path: "crocboots.jpg", description: "These boots were made for croc'n.")
     seller.garments.create(name: "Croc Gloves", price: 10000, image_path: "crocgloves.jpg", description: "Rock, paper, crock!")
   end
+
+  #def generate_leatherface
+    #seller = FactoryGirl.create(:seller, store_name: "Leatherface", image_path: "", description: "You may remember me from my former profession...")
+    #FactoryGirl.create(:user, username: "croc", email: "croc@croc.com", userable_id: seller.id, userable_type: "Seller")
+    #seller.garments.create(name: "Midnight Croc", price: 100000, image_path: "crocjacket.jpg", description: "Luxurious in black.")
+    #seller.garments.create(name: "Croc Wallet", price: 30000, image_path: "crocwallet.jpg", description: "Moneybag for him.")
+    #seller.garments.create(name: "Croc Purse", price: 300000, image_path: "crocbag.jpg", description: "Moneybag for her.")
+    #seller.garments.create(name: "Croc Shoes", price: 10000, image_path: "crocshoes.jpg", description: "Walk on thin croc.")
+    #seller.garments.create(name: "Fire Croc", price: 100000, image_path: "crockjacketred.jpg", description: "Luxurious in red.")
+    #seller.garments.create(name: "Croc Watchcase", price: 10000, image_path: "crocwatchcase.jpg", description: "Helps keep your croc skin watches taut.")
+    #seller.garments.create(name: "Croc Casual Shoes", price: 10000, image_path: "croccasualshoes.jpg", description: "Relax, it's just croc skin.")
+    #seller.garments.create(name: "Croc Boots", price: 10000, image_path: "crocboots.jpg", description: "These boots were made for croc'n.")
+    #seller.garments.create(name: "Croc Gloves", price: 10000, image_path: "crocgloves.jpg", description: "Rock, paper, crock!")
+  #end
+
+  #def generate_furmanchu
+    #seller = FactoryGirl.create(:seller, store_name: "Furmanchu", image_path: "", description: "Animal hair styled as well as my namesake.")
+    #FactoryGirl.create(:user, username: "croc", email: "croc@croc.com", userable_id: seller.id, userable_type: "Seller")
+    #seller.garments.create(name: "Midnight Croc", price: 100000, image_path: "crocjacket.jpg", description: "Luxurious in black.")
+    #seller.garments.create(name: "Croc Wallet", price: 30000, image_path: "crocwallet.jpg", description: "Moneybag for him.")
+    #seller.garments.create(name: "Croc Purse", price: 300000, image_path: "crocbag.jpg", description: "Moneybag for her.")
+    #seller.garments.create(name: "Croc Shoes", price: 10000, image_path: "crocshoes.jpg", description: "Walk on thin croc.")
+    #seller.garments.create(name: "Fire Croc", price: 100000, image_path: "crockjacketred.jpg", description: "Luxurious in red.")
+    #seller.garments.create(name: "Croc Watchcase", price: 10000, image_path: "crocwatchcase.jpg", description: "Helps keep your croc skin watches taut.")
+    #seller.garments.create(name: "Croc Casual Shoes", price: 10000, image_path: "croccasualshoes.jpg", description: "Relax, it's just croc skin.")
+    #seller.garments.create(name: "Croc Boots", price: 10000, image_path: "crocboots.jpg", description: "These boots were made for croc'n.")
+    #seller.garments.create(name: "Croc Gloves", price: 10000, image_path: "crocgloves.jpg", description: "Rock, paper, crock!")
+  #end
 
   def image
     Dir["app/assets/images/individuals/*.jpg"].sample.split("/").last
