@@ -1,18 +1,30 @@
-<%= form_for([:seller, @garment]) do |f| %>
-  <%= f.label :name, "enter name" %>
-  <%= f.text_field :name %>
+<div class="container">
+  <%= form_for([:seller, @garment], role: "form") do |f| %>
+    <div class="form-group">
+      <%= f.label :name, "Name" %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
 
-  <%= f.label :description, "enter description" %>
-  <%= f.text_field :description %>
+    <div class="form-group">
+      <%= f.label :description, "Description" %>
+      <%= f.text_field :description, class: "form-control"  %>
+    </div>
 
-  <%= f.label :price, "enter price" %>
-  <%= f.text_field :price %>
+    <div class="form-group">
+      <%= f.label :price, "Price" %>
+      <%= f.text_field :price, class: "form-control"  %>
+    </div>
 
-  <%= f.label :image_path, "enter image_path" %>
-  <%= f.text_field :image_path %>
+    <div class="form-group">
+      <%= f.label :image_path, "Image" %>
+      <%= f.text_field :image_path, class: "form-control"  %>
+    </div>
 
-  <%= f.label :retired, "enter retired" %>
-  <%= f.text_field :retired %>
+    <div class="form-group">
+      <%= f.label :retired, "Retired" %>
+      <%= f.text_field :retired, class: "form-control"  %>
+    </div>
 
-  <%= f.submit "Create" %>
-<% end %>
+    <%= f.submit "Create", class: "btn btn-success" %>
+  <% end %>
+</div>

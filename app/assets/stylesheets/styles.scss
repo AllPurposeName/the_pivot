@@ -13,23 +13,30 @@ body {
   font-family: "Helvetica", sans-serif;
   color: $plum;
   background-color: $sand;
-	/*background-image: url("background-image.jpg");*/
 }
 
-.shrink {
-  margin-top: -10px;
-  -webkit-transition: 3s;
-  -moz-transition: 3s;
-  -ms-transition: 3s;
-  transition: 3s;
+.roundrect {
+  border-radius: 15px;
 }
 
-.shrink {
-  width: 50px;
-  -webkit-transition: 3s;
-  -moz-transition: 3s;
-  -ms-transition: 3s;
-  transition: 3s;
+#logo {
+  margin-top: -6px;
+  margin-right: -8px;
+}
+
+.navbar {
+  border-bottom: 10px solid $salmon;
+}
+
+.salmon-bottom {
+  border-bottom: 10px solid $teal;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+#big-title {
+  color: $salmon;
+  font-size: 35px;
+  margin-top: 8px;
 }
 
 form {
@@ -83,12 +90,14 @@ form {
 }
 
 .navbar-inverse .navbar-nav > li > a  {
+  margin-top: 8px;
+  font-size: medium;
   font-weight: bold;
-  color: $salmon;
+  color: $teal;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,a:focus  {
-  color: $sand;
+  color: $salmon;
 }
 
 .yield-style {
@@ -116,7 +125,9 @@ h1,h2,h3 {
 }
 
 #order-title {
-  float: right;
+  margin-right: 80px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 a {
@@ -161,13 +172,10 @@ a:hover {
 }
 
 .item:hover {
-  box-shadow: 0px 0px 0px #888888;
-  margin-left: 20px;
-  margin-top: 20px;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .item a {
@@ -176,15 +184,14 @@ a:hover {
 }
 
 .item figcaption {
+  padding: 3px;
   background-color: $plum;
 }
 
 .item {
-  box-shadow: 10px 10px 5px #888888;
   display: block;
   float: left;
   width: 300px;
-  /*margin-right: 20px;*/
   margin-top: 20px;
   -webkit-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
   -moz-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
@@ -207,15 +214,17 @@ a:hover {
 }
 
 #seller-profile img {
-  width: 300px;
+  width: 250px;
 }
 
 #seller-profile {
   background-color: $plum;
   color: $sand;
-  width: 300px;
+  width: 250px;
   margin-top: 120px;
-  border: 2px solid $plum;
+  margin-right: 20px;
+  margin-left: 20px;
+  box-shadow: 10px 10px 10px 5px #888888;
 }
 
 #seller-banner {
@@ -233,4 +242,17 @@ a:hover {
 
 #image-center {
   margin-left: 50px;
+}
+
+#garment-create {
+  margin-left: 500px;
+  margin-right: 500px;
+}
+
+.top {
+  margin-top: 5px;
+}
+
+.big-top {
+  margin-top: 30px;
 }

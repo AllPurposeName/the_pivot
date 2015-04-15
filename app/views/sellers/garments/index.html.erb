@@ -7,20 +7,21 @@
     <p>I love crocodiles. A little too much.</p>
   </figcaption>
 </div>
+
 <div class="masonry-container">
   <div id="store-nav">
     <h3 class="inline">Garment Type</h3>
+    <p class="glyphicon glyphicon-triangle-bottom"></p>
     &nbsp;
     &nbsp;
     <h3 class="inline">Price</h3>
+    <p class="glyphicon glyphicon-triangle-bottom"></p>
     &nbsp;
     &nbsp;
     <h3 class="inline">Material Type</h3>
+    <p class="glyphicon glyphicon-triangle-bottom"></p>
     &nbsp;
     &nbsp;
-    <div id="seller-banner" class="inline">
-      <%= image_tag "horizontalcroc.png", width: "350" %>
-    </div>
   </div>
   <% @garments.each do |garment| %>
     <% cache(garment) do %>

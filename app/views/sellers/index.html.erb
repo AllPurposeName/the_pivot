@@ -4,4 +4,4 @@
     <%= link_to "Edit", edit_seller_garment_path(id: garment.id, slug: current_user.slug) %>
   </div>
 <% end %>
-<%= link_to "Create New Garment", new_seller_garment_path(slug: current_user.slug ), class: "btn btn-success" %>
+<%= link_to "Create New Garment", new_seller_garment_path(slug: current_user.slug ), id: "garment-create", class: "btn btn-success text-center center-block" %>
