@@ -1,12 +1,7 @@
-<%= render "layouts/carousel" %>
 
 <div id="category-single" class="align-text-center">
 
   <h1> <%= @category.name.capitalize %> </h1>
-
-  <h2> <%= @category.description.capitalize %> </h2>
-
-  <h3> <%= @category.availability %> </h3>
 
   <div class="masonry-container center-block" id="garment-container">
     <% @garments.each do |garment| %>

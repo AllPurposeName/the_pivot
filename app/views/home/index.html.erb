@@ -7,13 +7,9 @@
   </h1>
 </div>
 
-<h2 class="text-center">Categories</h2>
-<div class="text-center">
-  <% @categories.each do |category| %>
-    <%= link_to "#{category.name}", "categories/#{category.name.downcase}"%>&nbsp;&nbsp;
-  <% end %>
+<div class="salmon-bottom">
+  <h2 class="text-center top">Featured Stores</h2>
 </div>
-<h2 class="text-center">Featured Stores</h2>
 <div class="masonry-container center-block" id="seller-container">
   <br>
   <br>
@@ -27,7 +23,9 @@
 </div>
 <br>
 
-<h2 class="text-center">Top Sellers</h2>
+<div class="salmon-bottom">
+  <h2 class="text-center top">Top Sellers</h2>
+</div>
 <div class="masonry-container center-block" id="garment-container">
   <% @garments.each do |garment| %>
     <div class="item">
