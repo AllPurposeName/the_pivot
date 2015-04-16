@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :inventory, only: [:index]
-    resources :categorys, except: [:index]
+    resources :categories, except: [:index]
     resources :garments, except: [:index]
     put '/garments/js/:id', to: 'garments#retired_update'
     resources :orders, only: [:index, :update]
