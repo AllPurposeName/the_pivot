@@ -1,25 +1,33 @@
 <div id="seller-profile" class="pull-left inline">
-  <%= image_tag "croctee.jpg" %>
+  <%= image_tag @garments.first.seller.image_path %>
   <figcaption class="caption">
     <h3>
       <%= @garments.first.seller.store_name %>
     </h3>
-    <p>I love crocodiles. A little too much.</p>
+    <p><%= @garments.first.seller.description %></p>
+    &nbsp;
+    &nbsp;
+    <p>Garment delivery time depends on which product is chosen.</p>
+    &nbsp;
+    &nbsp;
+    <p>All garments guaranteed to be made of all natural components.</p>
   </figcaption>
 </div>
 
 <div class="masonry-container">
   <div id="store-nav">
-    <h3 class="inline">Garment Type</h3>
-    <p class="glyphicon glyphicon-triangle-bottom"></p>
+    <p>
+    </p>
+    <span class="inline">Garment Type</span>
+    <span class="glyphicon glyphicon-triangle-bottom"></span>
     &nbsp;
     &nbsp;
-    <h3 class="inline">Price</h3>
-    <p class="glyphicon glyphicon-triangle-bottom"></p>
+    <span class="inline">Price<span>
+    <span class="glyphicon glyphicon-triangle-bottom"></span>
     &nbsp;
     &nbsp;
-    <h3 class="inline">Material Type</h3>
-    <p class="glyphicon glyphicon-triangle-bottom"></p>
+    <span class="inline">Material Type</span>
+    <span class="glyphicon glyphicon-triangle-bottom"></span>
     &nbsp;
     &nbsp;
   </div>
