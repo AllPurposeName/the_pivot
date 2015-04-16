@@ -18,6 +18,18 @@ body {
   background-color: $sand;
 }
 
+#seller-container > .item > a > img {
+  height: 250px;
+}
+
+#seller-container > .item {
+    max-width: 100%;
+    height: auto;
+    width: 300px;
+    min-height: 300px;
+    max-height: auto;
+}
+
 .garment-form {
   margin-left: 15%;
 }
@@ -301,6 +313,12 @@ a:hover {
 }
 
 .center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#top-3 {
   display: block;
   margin-left: auto;
   margin-right: auto;
