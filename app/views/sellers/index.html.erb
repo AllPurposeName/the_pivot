@@ -1,7 +1,7 @@
 <% @garments.each do |garment| %>
   <div>
     <%= garment.name %>
-    <%= link_to "Edit", edit_seller_garment_path(id: garment.id, slug: current_user.slug) %>
+    <%= link_to "Edit", edit_seller_garment_path(id: garment.id, slug: current_user.slug), class: "text-center" %>
   </div>
 <% end %>
 <%= link_to "Create New Garment", new_seller_garment_path(slug: current_user.slug ), id: "garment-create", class: "btn btn-success text-center center-block" %>
