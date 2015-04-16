@@ -2,7 +2,7 @@ class Sellers::GarmentsController < ApplicationController
   before_action :set_garment, only: [:show]
 
   def index
-    @garments = Seller.find_by_slug(params[:slug]).garments
+    @garments = Seller.find_by_slug(params[:slug]).garments.where(retired: false)
   end
 
   def show

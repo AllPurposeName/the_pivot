@@ -23,7 +23,7 @@
 
     <div class="form-group">
       <%= "Status:" %>
-      <%= select("garment_", "retire_updater", ["active", "retired"], {include_blank: false}) %>
+      <%= select("garment", "retired", options_for_select([ ["active", 0], ["retired", 1]], 2), {include_blank: false}) %>
     </div>
     <%= f.submit "Edit", class: "btn btn-danger" %>
   <% end %>
