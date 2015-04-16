@@ -22,6 +22,7 @@ class Sellers::GarmentsController < ApplicationController
       redirect_to owners_path
     else
       try_create_garment_again
+      redirect_to new_seller_garment_path(slug: current_user.slug)
     end
   end
 
@@ -30,23 +31,25 @@ class Sellers::GarmentsController < ApplicationController
   end
 
   def update
-    garment = Garment.find(params[:id])
-    if garment.update(garment_params)
-      flash[:success] = "You have successfully updated #{garment.name}."
+    @garment = Garment.find(params[:id])
+    if @garment.update(garment_params)
+      flash[:success] = "You have successfully updated #{@garment.name}."
       redirect_to owners_path
     else
-      flash[:danger] = "Please try editing #{garment.name} again."
-      render :edit
+      @garment
+      try_create_garment_again
+      flash[:danger] = "Please try editing #{@garment.name} again."
+      redirect_to edit_seller_garment_path(slug: current_user.slug)
     end
   end
 
   private
   def garment_params
     params.require(:garment).permit(:name,
-                                :description,
-                                :image_path,
-                                :retired,
-                                :price)
+                                    :description,
+                                    :image_path,
+                                    :retired,
+                                    :price)
   end
 
   def set_garment
@@ -58,7 +61,6 @@ class Sellers::GarmentsController < ApplicationController
     @garment.errors.messages.each do |field, msg|
       flash[field] = "#{field.to_s.humanize} #{msg[0]}"
     end
-    redirect_to new_seller_garment_path(slug: current_user.slug)
   end
 
 end

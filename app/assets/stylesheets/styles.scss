@@ -8,6 +8,7 @@ $light-sand: #FAF3ED;
 $peach: #D99B84;
 $brown: #734A40;
 $teal: #75bfb2;
+$light-teal: #abd8d0;
 
 body {
   font-family: "Helvetica", sans-serif;
@@ -124,6 +125,41 @@ h1,h2,h3 {
 
 #logo-home > h1 {
   font-size: 2.3em;
+}
+.header {
+  display: table;
+  position: relative;
+  margin-top: -12px;
+  width: 100%;
+  height: 625px;
+  background: image-url("front_page5.jpg") no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+
+.text-vertical-center {
+  display: table-cell;
+  vertical-align: middle;
+  color: $light-sand;
+  padding-top: 100px;
+}
+
+.text-vertical-center h1 {
+  padding-left: 10px;
+  padding-bottom: 55px;
+  font-size: 2em;
+  font-weight: 700;
+  color: $light-sand;
+
+}
+
+#link-vertical-center  {
+  font-size: medium;
+  font-weight: bold;
+  color: $light-teal;
 }
 
 #order-title {
@@ -260,5 +296,5 @@ a:hover {
 }
 
 .img-home {
-max-height: 200px;
+  max-height: 200px;
 }
