@@ -10,5 +10,3 @@ class GarmentCategory < ActiveRecord::Base
     end
   end
 end
-
-ItemCategory = GarmentCategory

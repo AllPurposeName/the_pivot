@@ -4,6 +4,7 @@ class Admin::OrdersController < ApplicationController
     authorize! :update, Order
     @orders = Order.all.sort
     @statuses = ["all", "ordered", "paid", "completed", "cancelled"]
+    #Make status model to be shared sitewide
     respond_with @orders
   end
 

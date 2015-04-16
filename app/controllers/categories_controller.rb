@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-
   def index
     @categories = Category.all
   end
@@ -8,5 +7,4 @@ class CategoriesController < ApplicationController
     @category = Category.find_by(name: params[:name])
     @garments = @category.garments
   end
-
 end
