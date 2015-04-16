@@ -1,5 +1,6 @@
 class Admin::InventoryController < ApplicationController
   before_action :set_garments, :set_categorys
+
   def index
     authorize! :edit, Category
   end
@@ -13,5 +14,4 @@ class Admin::InventoryController < ApplicationController
   def set_categorys
     @categories = Category.all
   end
-
 end

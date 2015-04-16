@@ -1,7 +1,4 @@
 class HomeController < ApplicationController
-  def show
-  end
-
   def index
     set_top_sellers
     set_categories

@@ -87,7 +87,7 @@ class Seed
     seller.garments.create(name: "Croc Watchcase", price: 10000, image_path: "crocwatchcase.jpg", description: "Helps keep your croc skin watches taut.")
     seller.garments.create(name: "Croc Casual Shoes", price: 10000, image_path: "croccasualshoes.jpg", description: "Relax, it's just croc skin.")
     seller.garments.create(name: "Croc Boots", price: 10000, image_path: "crocboots.jpg", description: "These boots were made for croc'n.")
-    seller.garments.create(name: "Croc Gloves", price: 10000, image_path: "crocgloves.jpg", description: "Rock, paper, crock!")
+    seller.garments.create(name: "Croc Gloves", price: 7500, image_path: "crocgloves.jpg", description: "Croc, paper, scissors!")
   end
 
   def generate_leatherface

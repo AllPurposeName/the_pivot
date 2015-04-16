@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/helpers/application_helper.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/helpers/application_helper.rb": [
         1,
         1,
         0,
@@ -11,15 +11,15 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/helpers/sellers_helper.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/helpers/sellers_helper.rb": [
         1,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/helpers/users_helper.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/controllers/sellers_controller.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/controllers/sellers_controller.rb": [
         1,
         1,
         1,
@@ -46,7 +46,7 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/controllers/application_controller.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -58,13 +58,13 @@
         null,
         null,
         1,
-        474,
+        485,
         null,
         null,
         1,
         null,
         1,
-        120,
+        123,
         null,
         null,
         1,
@@ -76,7 +76,7 @@
         1,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/controllers/users_controller.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/controllers/users_controller.rb": [
         1,
         1,
         0,
@@ -117,7 +117,7 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/mailers/notifier.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/mailers/notifier.rb": [
         1,
         null,
         1,
@@ -134,13 +134,13 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/mailers/application_mailer.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/mailers/application_mailer.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/models/garment.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/models/garment.rb": [
         1,
         1,
         1,
@@ -182,7 +182,7 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/models/concerns/attribute_updater.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/models/concerns/attribute_updater.rb": [
         1,
         1,
         2,
@@ -191,7 +191,7 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/models/concerns/monify.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/models/concerns/monify.rb": [
         1,
         1,
         58,
@@ -200,7 +200,7 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/models/user.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/models/user.rb": [
         1,
         1,
         1,
@@ -224,12 +224,12 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/controllers/sessions_controller.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/controllers/sessions_controller.rb": [
         1,
         1,
         null,
         1,
-        25,
+        26,
         null,
         null,
         1,
@@ -238,14 +238,14 @@
         null,
         null,
         1,
-        14,
-        14,
+        15,
+        15,
         0,
         null,
-        14,
-        5,
-        5,
-        5,
+        15,
+        6,
+        6,
+        6,
         9,
         8,
         8,
@@ -269,21 +269,21 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/controllers/concerns/reset_cart.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/controllers/concerns/reset_cart.rb": [
         1,
         1,
         0,
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/models/cart.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/models/cart.rb": [
         1,
         1,
         1,
         null,
         1,
-        120,
-        120,
+        123,
+        123,
         null,
         null,
         1,
@@ -326,26 +326,26 @@
         1,
         null,
         1,
-        120,
-        120,
-        120,
+        123,
+        123,
+        123,
         null,
         null,
         null,
         1,
-        120,
+        123,
         27,
         null,
         null,
         null,
         1,
-        120,
+        123,
         27,
         null,
         null,
         null,
         1,
-        120,
+        123,
         27,
         27,
         null,
@@ -368,26 +368,26 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/controllers/admin/inventory_controller.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/controllers/admin/inventory_controller.rb": [
         1,
         1,
         1,
-        5,
+        6,
         null,
         null,
         1,
         null,
         1,
-        5,
+        6,
         null,
         null,
         1,
-        5,
+        6,
         null,
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/models/category.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/models/category.rb": [
         1,
         1,
         1,
@@ -418,28 +418,28 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/models/ability.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/models/ability.rb": [
         1,
         1,
         null,
         1,
-        18,
-        18,
+        19,
+        19,
         5,
         5,
         5,
         null,
-        18,
+        19,
         0,
         0,
         null,
-        18,
-        13,
+        19,
+        14,
         null,
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/controllers/admin/categories_controller.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/controllers/admin/categories_controller.rb": [
         1,
         1,
         null,
@@ -491,7 +491,7 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/controllers/admin/garments_controller.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/controllers/admin/garments_controller.rb": [
         1,
         1,
         1,
@@ -554,7 +554,7 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/models/order.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/models/order.rb": [
         1,
         1,
         1,
@@ -574,7 +574,7 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/models/seller.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/models/seller.rb": [
         1,
         1,
         1,
@@ -595,7 +595,7 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/controllers/sellers/garments_controller.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/controllers/sellers/garments_controller.rb": [
         1,
         1,
         null,
@@ -665,7 +665,7 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/controllers/cart_items_controller.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/controllers/cart_items_controller.rb": [
         1,
         null,
         1,
@@ -703,7 +703,7 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/controllers/home_controller.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/controllers/home_controller.rb": [
         1,
         1,
         null,
@@ -745,7 +745,7 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/controllers/categories_controller.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/controllers/categories_controller.rb": [
         1,
         null,
         1,
@@ -759,7 +759,7 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/models/garment_category.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/models/garment_category.rb": [
         1,
         1,
         null,
@@ -775,7 +775,7 @@
         null,
         1
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/controllers/order_garments_controller.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/controllers/order_garments_controller.rb": [
         1,
         1,
         1,
@@ -798,13 +798,13 @@
         null,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/models/order_garment.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/models/order_garment.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/jgu2160/Turing/rs/rails/the_pivot/app/controllers/orders_controller.rb": [
+      "/Users/djgreenfield/Documents/turing/module_3/projects/the_pivot/app/controllers/orders_controller.rb": [
         1,
         null,
         1,
@@ -820,6 +820,6 @@
         null
       ]
     },
-    "timestamp": 1429204411
+    "timestamp": 1429207237
   }
 }

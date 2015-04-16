@@ -25,8 +25,8 @@ config.action_mailer.smtp_settings = {
   address:              'smtp.mandrillapp.com',
   port:                 '587',
   domain:               'handmeups.clothing',
-  user_name:            ENV['gmail_username'],
-  password:             ENV['gmail_password'],
+  user_name:            ENV['mandrill_username'],
+  password:             ENV['API_key'],
   authentication:       'plain',
   enable_starttls_auto: true
 }
