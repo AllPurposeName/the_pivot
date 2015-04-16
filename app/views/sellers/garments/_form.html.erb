@@ -1,4 +1,5 @@
-<%= form_for([:seller, @garment], url: seller_garment_path(slug: current_user.slug, id: @garment.id), method: :put) do |f| %>
+<div class="container garment-form">
+  <%= form_for([:seller, @garment], url: seller_garment_path(slug: current_user.slug, id: @garment.id), method: :put) do |f| %>
 
     <div class="form-group">
       <%= f.label :name, "Name" %>
@@ -21,8 +22,9 @@
     </div>
 
     <div class="form-group">
-  <%= "Status:" %>
-  <%= select("garment_", "retire_updater", ["active", "retired"], {include_blank: false}) %>
+      <%= "Status:" %>
+      <%= select("garment_", "retire_updater", ["active", "retired"], {include_blank: false}) %>
+    </div>
+    <%= f.submit "Edit", class: "btn btn-danger" %>
+  <% end %>
 </div>
-  <%= f.submit "Edit", class: "btn btn-danger" %>
-<% end %>
