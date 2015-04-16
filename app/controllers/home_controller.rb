@@ -31,7 +31,7 @@ class HomeController < ApplicationController
   end
 
   def set_random_garments
-    @garments = Garment.order("RANDOM()")
+    @garments = Garment.where(retired: false).order("RANDOM()")
   end
 
   def set_random_sellers
