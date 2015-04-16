@@ -32,15 +32,15 @@
             <% end %>
             <% unless current_user %>
               <li>
-                <a href="#" data-toggle="modal" data-target="#signupModal">
-                  sign up
-                </a>
+              <a href="#" data-toggle="modal" data-target="#signupModal">
+                sign up
+              </a>
               </li>
               <li>
 
-                <a href="#" data-toggle="modal" data-target="#loginModal">
-                  login
-                </a>
+              <a href="#" data-toggle="modal" data-target="#loginModal">
+                login
+              </a>
               </li>
             <% else %>
               <li><%= link_to "orders", orders_path %></li>
