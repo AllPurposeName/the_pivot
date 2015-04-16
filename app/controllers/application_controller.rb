@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     if !@current_user
       redirect_to login_path, alert: exception.message
-    else
-      redirect_to root_path, alert: exception.message
+    elsif @current_user.userable_type == "Seller"
+      redirect_to owners_path, alert: exception.message
     end
   end
 

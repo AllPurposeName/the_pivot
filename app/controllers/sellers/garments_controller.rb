@@ -14,7 +14,7 @@ class Sellers::GarmentsController < ApplicationController
   end
 
   def create
-    #authorize! :create, Garment
+    authorize! :edit, Garment
     @garment = Garment.new(garment_params)
     @garment.seller_id = current_user.userable_id
     if @garment.save
@@ -28,10 +28,12 @@ class Sellers::GarmentsController < ApplicationController
 
   def edit
     @garment = Garment.find(params[:id])
+    authorize! :edit, @garment
   end
 
   def update
     @garment = Garment.find(params[:id])
+    authorize! :update, @garment
     if @garment.update(garment_params)
       flash[:success] = "You have successfully updated #{@garment.name}."
       redirect_to owners_path
