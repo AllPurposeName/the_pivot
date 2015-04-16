@@ -1,11 +1,11 @@
 require "rails_helper"
 describe "admin orders" do
   it "displays a list of orders and filter buttons" do
-#    Order.create(user_id: 1, status: 0)
-#    visit "/admin/orders"
-#    within("table tr td") do
-#      expect(page).to have_content("1")
-#    end
+    Order.create(user_id: 1, status: 0)
+    visit "/admin/orders"
+    within("table tr td") do
+      expect(page).to have_content("1")
+    end
   end
   context "from '/admin/orders'" do
     it "allows admin to change status to 'paid'" do
