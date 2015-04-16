@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150415204037) do
+ActiveRecord::Schema.define(version: 20150416054234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,10 +36,10 @@ ActiveRecord::Schema.define(version: 20150415204037) do
     t.text     "name"
     t.integer  "price"
     t.boolean  "retired",     default: false
-    t.string   "image_path"
+    t.string   "image_path",  default: "garment_default.jpg"
     t.text     "description"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.integer  "seller_id"
   end
 
@@ -62,10 +62,10 @@ ActiveRecord::Schema.define(version: 20150415204037) do
 
   create_table "sellers", force: :cascade do |t|
     t.string   "slug"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.string   "store_name"
-    t.text     "image_path"
+    t.text     "image_path",  default: "seller_default.jpg"
     t.text     "description"
   end
 

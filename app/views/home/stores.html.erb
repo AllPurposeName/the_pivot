@@ -4,7 +4,7 @@
 <div class="masonry-container center-block">
   <% @sellers.each do |seller| %>
     <div class="item">
-      <%= link_to image_tag("croctee.jpg"), seller_path(slug: seller.slug) %>
+      <%= link_to image_tag(seller.image_path), seller_path(slug: seller.slug) %>
       <figcaption>
         <%= link_to seller.store_name, seller_path(slug: seller.slug) %>
       </figcaption>
