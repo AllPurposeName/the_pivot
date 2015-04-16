@@ -1,35 +1,45 @@
-<h1>Your Cart</h1>
-<table class="table table-hover">
-  <tr>
-    <th>Name &nbsp; &nbsp; &nbsp;</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th></th>
-    <th>Quantity</th>
-    <th></th>
-    <th>Total Price</th>
-  </tr>
-
-  <% @cart.garments_quantity.each do |garment, quantity| %>
+<div class="center-block" id="cart-div">
+  <table class="table table-hover">
     <tr>
-      <td><%= garment.name %></td>
-      <td><%= garment.description %></td>
-      <td><%= garment.monify %></td>
-      <td><%= link_to "", decrement_cart_items_path(id: garment.id), method: :put, class: "glyphicon glyphicon-minus", id: "minus-#{garment.id}" %></td>
-      <td><%= quantity %></td>
-      <td><%=link_to "", increment_cart_items_path(id: garment.id), method: :patch, class: "glyphicon glyphicon-plus", id: "plus-#{garment.id}" %></td>
-      <td>
-        <%= @cart.subtotal(garment)%>
-      </td>
-      <td><%= link_to "", cart_items_path(id: garment.id), method: :delete, class: "glyphicon glyphicon-remove", id: "remove-#{garment.id}"%></td>
+      <th>Name &nbsp; &nbsp; &nbsp;</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th></th>
+      <th>Quantity</th>
+      <th></th>
+      <th>Total Price</th>
     </tr>
-  <% end %>
-</table>
 
-<% unless @cart.garments_quantity.empty? %>
-  <% if current_user %>
-    <%= button_to "checkout", order_garments_path, id: "order-title", class: "btn btn-success pull-right"%>
-  <% else %>
-    <a href="#" class="btn btn-success pull-right" id="order-title" data-toggle="modal" data-target="#loginModal">checkout</a>
-  <% end %>
-<% end %>
+    <% @cart.garments_quantity.each do |garment, quantity| %>
+      <tr>
+        <td><%= garment.name %></td>
+        <td><%= garment.description %></td>
+        <td><%= garment.monify %></td>
+        <td><%= link_to "", decrement_cart_items_path(id: garment.id), method: :put, class: "glyphicon glyphicon-minus", id: "minus-#{garment.id}" %></td>
+        <td><%= quantity %></td>
+        <td><%=link_to "", increment_cart_items_path(id: garment.id), method: :patch, class: "glyphicon glyphicon-plus", id: "plus-#{garment.id}" %></td>
+        <td>
+          <%= @cart.subtotal(garment)%>
+        </td>
+        <td><%= link_to "", cart_items_path(id: garment.id), method: :delete, class: "glyphicon glyphicon-remove", id: "remove-#{garment.id}"%></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <% unless @cart.garments_quantity.empty? %>
+          <% if current_user %>
+            <%= button_to "checkout", order_garments_path, id: "order-title", class: "btn btn-success pull-right"%>
+          <% else %>
+            <a href="#" class="btn btn-success pull-right" id="order-title" data-toggle="modal" data-target="#loginModal">checkout</a>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+</div>
